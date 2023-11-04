@@ -28,7 +28,7 @@
     "nothingmodsmp.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.24",
+    "fabricloader": ">=0.14.22",
     "fabric": "*",
     "minecraft": "1.20.1"
   }

@@ -16,7 +16,7 @@ import net.nevixity.nothingmod.item.custom.SmokeBombItem;
 
 public class ModItems {
 public static final Item ODIUM_INGOT = registerItem("odium_ingot", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
-public static final Item ODIUM_SCRAP = registerItem("odium_scrap", new Item(new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
+public static final Item ODIUM_SCRAP = registerItem("odium_scrap", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
 public static final Item ODIUM_APPLE = registerItem("odium_apple", new Item(new FabricItemSettings().rarity(Rarity.EPIC).food(ModFoodComponents.ODIUM_APPLE).fireproof()));
 
 public static final Item RAW_ODIUM = registerItem("raw_odium", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));

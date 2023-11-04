@@ -11,6 +11,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.nevixity.nothingmod.NothingMod;
 
 public class ModBlocks {
@@ -26,7 +27,7 @@ private static Block registerBlock(String name, Block block) {
 }
     private static Item registerBlockItem(String name, Block block) {
         return Registry.register(Registries.ITEM, new Identifier(NothingMod.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings().fireproof()));
+                new BlockItem(block, new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
     }
     public static void registerModBlocks() {
         NothingMod.LOGGER.info("Registering ModBlocks for" + NothingMod.MOD_ID);
