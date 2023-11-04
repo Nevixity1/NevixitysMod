@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "nothingmodsmp:odium_ingot"
+    }
+  },
+  "result": {
+    "item": "nothingmodsmp:odium_block"
+  }
+
+}

@@ -1,8 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "nothingmod:item/odium_ingot"
-
-  }
-
-}
