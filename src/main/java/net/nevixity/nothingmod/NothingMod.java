@@ -4,10 +4,13 @@ import net.fabricmc.api.ModInitializer;
 
 import net.nevixity.nothingmod.Entity.ModEntities;
 import net.nevixity.nothingmod.block.ModBlocks;
+import net.nevixity.nothingmod.datagen.ModWorldGenerator;
 import net.nevixity.nothingmod.item.ModItemGroups;
 import net.nevixity.nothingmod.item.ModItems;
 import net.nevixity.nothingmod.particles.ModParticles;
 import net.nevixity.nothingmod.util.ModRegistries;
+import net.nevixity.nothingmod.world.ModOrePlacement;
+import net.nevixity.nothingmod.world.ModPlacedFeatures;
 import net.nevixity.nothingmod.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

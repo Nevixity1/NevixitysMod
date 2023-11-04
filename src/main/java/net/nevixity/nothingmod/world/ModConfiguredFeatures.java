@@ -12,6 +12,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.nevixity.nothingmod.NothingMod;
 import net.nevixity.nothingmod.block.ModBlocks;
 
@@ -19,25 +20,16 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
 
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ODIUM_ORE_KEY = registerKey("pink_garnet_ore");
 
-    public static final RegistryKey<ConfiguredFeature<?,?>> ODIUM_ORE_KEY = registerKey("odium_ore");
-
-
-
-    public static void bootstrap(Registerable<ConfiguredFeature<?,?>> context) {
+    public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest endReplaceables = new BlockMatchRuleTest(Blocks.END_STONE);
 
-
-        List<OreFeatureConfig.Target> endOdiumOres =
-                List.of(OreFeatureConfig.createTarget(endReplaceables, ModBlocks.ODIUM_ORE_BLOCK.getDefaultState()));
-
+        List<OreFeatureConfig.Target> endPinkGarnetOres =
+                List.of(OreFeatureConfig.createTarget(endReplaceables, ModBlocks.ODIUM_ORE.getDefaultState()));
 
 
-
-
-
-    register(context, ODIUM_ORE_KEY, Feature.ORE, new OreFeatureConfig(endOdiumOres, 4));
-
+        register(context, ODIUM_ORE_KEY, Feature.ORE, new OreFeatureConfig(endPinkGarnetOres, 8));
     }
 
 
@@ -49,5 +41,4 @@ public class ModConfiguredFeatures {
                                                                                    RegistryKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
         context.register(key, new ConfiguredFeature<>(feature, configuration));
     }
-
 }

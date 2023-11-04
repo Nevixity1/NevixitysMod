@@ -10,22 +10,21 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 import net.nevixity.nothingmod.NothingMod;
-import net.nevixity.nothingmod.world.gen.ModOrePlacement;
 
 import java.util.List;
 
 public class ModPlacedFeatures {
+    public static final RegistryKey<PlacedFeature> ODIUM_ORE_PLACED_KEY = registerKey("odium_ore_placed");
 
-
-    public static final RegistryKey<PlacedFeature> ODIUM_ORE_PLACED_KEY = registerKey("odium_ore_ore_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
 
         register(context, ODIUM_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ODIUM_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(5,
+                ModOrePlacement.modifiersWithCount(5, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
+
 
     }
 
@@ -45,3 +44,5 @@ public class ModPlacedFeatures {
         register(context, key, configuration, List.of(modifiers));
     }
 }
+
+

@@ -19,7 +19,7 @@ public static final ItemGroup ODIUM_GROUP = Registry.register(Registries.ITEM_GR
 
                     entries.add(ModItems.ODIUM_INGOT);
                    entries.add(ModBlocks.ODIUM_BLOCK);
-                    entries.add(ModBlocks.ODIUM_ORE_BLOCK);
+                    entries.add(ModBlocks.ODIUM_ORE);
                      entries.add(ModItems.RAW_ODIUM);
 
                    entries.add(ModItems.ODIUM_SCRAP);

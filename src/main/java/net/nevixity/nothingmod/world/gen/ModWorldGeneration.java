@@ -6,7 +6,7 @@ public class ModWorldGeneration {
     {
 
 
-     ModOreGeneration.generateOres();
+        ModOreGeneration.generateOres();
         ModEntitySpawns.addSpawns();
     }
 }

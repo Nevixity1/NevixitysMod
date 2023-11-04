@@ -17,7 +17,7 @@ public class ModBlocks {
 public static final Block ODIUM_BLOCK = registerBlock("odium_block",
         new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
-    public static final Block ODIUM_ORE_BLOCK = registerBlock("odium_ore_block",
+    public static final Block ODIUM_ORE = registerBlock("odium_ore_block",
             new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).sounds(BlockSoundGroup.MEDIUM_AMETHYST_BUD)));
 
 private static Block registerBlock(String name, Block block) {

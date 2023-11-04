@@ -11,11 +11,14 @@
   "license": "All-Rights-Reserved",
   "environment": "*",
   "entrypoints": {
+
     "fabric-datagen": [
       "net.nevixity.nothingmod.NothingModDataGenerator"
+
     ],
     "client": [
       "net.nevixity.nothingmod.NothingModClient"
+
     ],
     "main": [
       "net.nevixity.nothingmod.NothingMod"
@@ -25,8 +28,8 @@
     "nothingmodsmp.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
+    "fabricloader": ">=0.14.24",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "1.20.1"
   }
 }

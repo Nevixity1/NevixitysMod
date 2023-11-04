@@ -1,4 +1,4 @@
-package net.nevixity.nothingmod.world.gen;
+package net.nevixity.nothingmod.world;
 
 import net.minecraft.world.gen.placementmodifier.*;
 
