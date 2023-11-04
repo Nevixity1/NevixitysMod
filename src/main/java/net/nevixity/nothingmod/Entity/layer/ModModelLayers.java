@@ -1,0 +1,20 @@
+package net.nevixity.nothingmod.Entity.layer;
+
+import net.minecraft.client.render.entity.model.EntityModelLayer;
+import net.minecraft.util.Identifier;
+import net.nevixity.nothingmod.NothingMod;
+
+public class ModModelLayers {
+    public static final EntityModelLayer SCYTHE_CHARGE_PROJECTILE =
+            new EntityModelLayer(new Identifier(NothingMod.MOD_ID,"scythe_charge_projectile"),"main");
+
+
+public static final EntityModelLayer REDPANDA =
+        new EntityModelLayer(new Identifier(NothingMod.MOD_ID, "redpanda"), "main");
+
+
+    public static final EntityModelLayer CAPYBARA =
+            new EntityModelLayer(new Identifier(NothingMod.MOD_ID, "capybara"), "main");
+
+
+}

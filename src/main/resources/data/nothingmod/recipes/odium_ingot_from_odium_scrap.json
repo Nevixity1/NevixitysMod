@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "netherite_ingot",
+  "ingredients": [
+    {
+      "item": "nothingmod:odium_scrap"
+    },
+
+    {
+      "item": "nothingmod:odium_scrap"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+
+    {
+      "item": "minecraft:netherite_scrap"
+    }
+  ],
+  "result": {
+    "item": "nothingmod:odium_ingot"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "nothingmodsmp",
+  "version": "${version}",
+  "name": "NothingModsmp",
+  "description": "a custom made mod",
+  "authors": ["Nevixity"],
+  "contact": {
+    "repo": "https://github.com/tomer/NothingModsmp"
+  },
+  "license": "All-Rights-Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "net.nevixity.nothingmod.NothingModDataGenerator"
+    ],
+    "client": [
+      "net.nevixity.nothingmod.NothingModClient"
+    ],
+    "main": [
+      "net.nevixity.nothingmod.NothingMod"
+    ]
+  },
+  "mixins": [
+    "nothingmodsmp.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "nothingmod:odium_block"
+    }
+  ],
+  "result": {
+    "item": "nothingmod:odium_ingot",
+    "count": 9
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "item.nothingmod.odium_ingot": "Odium Ingot",
+  "item.nothingmod.odium_scrap": "Odium Scrap",
+  "block.nothingmod.odium_block": "Block Of Odium",
+   "item.nothingmod.odium_apple": "Odium Apple",
+
+  "item.nothingmod.odium_scythe": "Odium Scythe",
+  "item.nothingmod.odium_pickaxe": "Odium Pickaxe",
+  "item.nothingmod.redpanda_spawn_egg": "Red Panda Spawn Egg",
+  "item.nothingmod.capybara_spawn_egg": "Capybara Spawn Egg",
+  "entity.nothingmod.redpanda":"Red Panda",
+  "item.nothingmod.flame_scythe": "Flame Scythe",
+   "item.nothingmod.smoke_bomb": "Smoke Bomb",
+"entity.nothingmod.capybara": "Capybara",
+  "item.nothingmod.raw_odium": "Raw Odium",
+  "block.nothingmod.odium_ore_block": "Odium Ore"
+
+
+
+}
