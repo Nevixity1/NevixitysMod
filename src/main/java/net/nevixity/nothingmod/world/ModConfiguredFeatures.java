@@ -20,7 +20,7 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> ODIUM_ORE_KEY = registerKey("pink_garnet_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ODIUM_ORE_KEY = registerKey("odium_ore");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest endReplaceables = new BlockMatchRuleTest(Blocks.END_STONE);
