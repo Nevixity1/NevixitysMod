@@ -25,11 +25,11 @@ public class ModConfiguredFeatures {
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest endReplaceables = new BlockMatchRuleTest(Blocks.END_STONE);
 
-        List<OreFeatureConfig.Target> endPinkGarnetOres =
+        List<OreFeatureConfig.Target> endOdiumOres =
                 List.of(OreFeatureConfig.createTarget(endReplaceables, ModBlocks.ODIUM_ORE.getDefaultState()));
 
 
-        register(context, ODIUM_ORE_KEY, Feature.ORE, new OreFeatureConfig(endPinkGarnetOres, 4));
+        register(context, ODIUM_ORE_KEY, Feature.ORE, new OreFeatureConfig(endOdiumOres, 8));
     }
 
 
