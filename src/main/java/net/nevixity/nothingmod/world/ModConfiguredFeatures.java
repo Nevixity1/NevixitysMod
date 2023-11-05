@@ -29,7 +29,7 @@ public class ModConfiguredFeatures {
                 List.of(OreFeatureConfig.createTarget(endReplaceables, ModBlocks.ODIUM_ORE.getDefaultState()));
 
 
-        register(context, ODIUM_ORE_KEY, Feature.ORE, new OreFeatureConfig(endPinkGarnetOres, 8));
+        register(context, ODIUM_ORE_KEY, Feature.ORE, new OreFeatureConfig(endPinkGarnetOres, 4));
     }
 
 

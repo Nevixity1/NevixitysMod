@@ -22,7 +22,7 @@ public class ModPlacedFeatures {
 
 
         register(context, ODIUM_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ODIUM_ORE_KEY),
-                ModOrePlacement.modifiersWithCount(2, // Veins per Chunk
+                ModOrePlacement.modifiersWithCount(1, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
 
 
