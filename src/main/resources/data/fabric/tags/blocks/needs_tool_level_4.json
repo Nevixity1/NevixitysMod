@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "nothingmodsmp:odium_block",
-     "nothingmodsmp:odium_ore_block"
+    "nevixitysmod:odium_block",
+     "nevixitysmod:odium_ore_block"
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "nevixitysmod:odium_ingot"
+    }
+  },
+  "result": {
+    "item": "nevixitysmod:odium_block"
+  }
+
+}
