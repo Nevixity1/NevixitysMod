@@ -64,7 +64,6 @@ public class CapybaraEntity extends TameableEntity implements Mount {
         this.goalSelector.add(1, new AttackWithOwnerGoal(this));
 
         this.goalSelector.add(4, new FollowOwnerGoal(this, 1.1D, 10f, 3f, false));
-
         this.goalSelector.add(2, new AnimalMateGoal(this, 1.15D));
         this.goalSelector.add(3, new TemptGoal(this, 1.1D, Ingredient.ofItems(Items.PUMPKIN), false));
 
@@ -223,7 +222,7 @@ public class CapybaraEntity extends TameableEntity implements Mount {
             }
         }
 
-        if (isTamed() && hand == Hand.MAIN_HAND && item != itemForTaming && !isBreedingItem(itemstack)) {
+        if (isTamed() && hand == Hand.MAIN_HAND && item != itemForTaming && !isBreedingItem(itemstack) && isOwner(player)) {
             if(!player.isSneaking()) {
                 setRiding(player);
             } else {

@@ -64,7 +64,6 @@ private int idleAnimationTimeout = 0;
         this.goalSelector.add(2, new AnimalMateGoal(this, 1.15D));
         this.goalSelector.add(3, new TemptGoal(this, 1.1D, Ingredient.ofItems(Items.BAMBOO), false));
 
-
         this.goalSelector.add(6, new WanderAroundFarGoal(this, 1.0D));
         this.goalSelector.add(7, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
         this.goalSelector.add(8, new LookAroundGoal(this));
@@ -228,7 +227,7 @@ public boolean isStanding() {
             }
         }
 
-        if(isTamed() && hand == Hand.MAIN_HAND && item != itemForTaming && !isBreedingItem(itemstack)) {
+        if(isTamed() && hand == Hand.MAIN_HAND && item != itemForTaming && !isBreedingItem (itemstack) && isOwner(player)) {
             boolean sitting = !isSitting();
             setSitting(sitting);
             setInSittingPose(sitting);
@@ -249,7 +248,7 @@ public boolean isStanding() {
 
     @Override
     public boolean isBreedingItem(ItemStack stack) {
-        return stack.isOf(Items.BAMBOO);
+        return stack.isOf(Items.APPLE);
     }
 
     @Override
