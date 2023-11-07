@@ -21,7 +21,7 @@ public static final ItemGroup ODIUM_GROUP = Registry.register(Registries.ITEM_GR
                    entries.add(ModBlocks.ODIUM_BLOCK);
                     entries.add(ModBlocks.ODIUM_ORE);
                      entries.add(ModItems.RAW_ODIUM);
-
+                       entries.add(ModItems.AUTUMN_FALLS_MUSIC_DISC);
                    entries.add(ModItems.ODIUM_SCRAP);
                    entries.add(ModItems.ODIUM_APPLE);
 

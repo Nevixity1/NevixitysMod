@@ -8,6 +8,7 @@ import net.nevixity.nothingmod.datagen.ModWorldGenerator;
 import net.nevixity.nothingmod.item.ModItemGroups;
 import net.nevixity.nothingmod.item.ModItems;
 import net.nevixity.nothingmod.particles.ModParticles;
+import net.nevixity.nothingmod.sound.ModSounds;
 import net.nevixity.nothingmod.util.ModRegistries;
 import net.nevixity.nothingmod.world.ModOrePlacement;
 import net.nevixity.nothingmod.world.ModPlacedFeatures;
@@ -28,5 +29,6 @@ public class NothingMod implements ModInitializer {
 		ModEntities.registerModEntites();
 		ModRegistries.registerModStuffs();
 		ModWorldGeneration.generateModWorldGeneration();
+		ModSounds.registersounds();
 	}
 }
