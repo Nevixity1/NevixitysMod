@@ -39,7 +39,7 @@ private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entrie
             new SpawnEggItem (ModEntities.REDPANDA, 0xa53314, 0x3b260f, new FabricItemSettings()));
 
     public static final Item CAPYBARA_SPAWN_EGG =registerItem("capybara_spawn_egg",
-            new SpawnEggItem (ModEntities.CAPYBARA, 0xa106114, 0x3b260f, new FabricItemSettings()));
+            new SpawnEggItem (ModEntities.CAPYBARA, 0xa555555, 0x3b260f, new FabricItemSettings()));
 
 
 public static final Item SMOKE_BOMB =registerItem("smoke_bomb",
