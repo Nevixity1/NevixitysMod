@@ -15,7 +15,7 @@
   "block.nevixitysmod.odium_ore_block": "Odium Ore",
   "item.nevixitysmod.autumn_falls_music_disc": "Autumn Falls disc",
   "item.nevixitysmod.autumn_falls_music_disc.desc": "Nevixity - Autumn Falls",
-  "sounds.nevixitysmod.autumn_fall_disc": "Autumn Disc "
-
+  "sounds.nevixitysmod.autumn_fall_disc": "Autumn Disc ",
+   "tooltip.nevixitysmod.odium_scythe.tooltip": "Shoots Toxic Odium Flame Upon Right Click"
 
 }

@@ -174,14 +174,14 @@ public boolean isStanding() {
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.ENTITY_FOX_AMBIENT;
+        return SoundEvents.ENTITY_PANDA_PRE_SNEEZE;
     }
 
 
     @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource source) {
-        return SoundEvents.ENTITY_FOX_HURT;
+        return SoundEvents.ENTITY_PANDA_SNEEZE;
     }
 
 

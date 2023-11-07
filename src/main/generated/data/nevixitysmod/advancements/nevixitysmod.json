@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "has_raw_odium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "nevixitysmod:raw_odium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "nevixitysmod:block/odium_block",
+    "description": {
+      "text": "Obtain Raw Odium"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "nevixitysmod:raw_odium"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "This Is New"
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_odium"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
