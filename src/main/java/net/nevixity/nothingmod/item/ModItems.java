@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
-import net.minecraft.item.TridentItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -13,6 +12,7 @@ import net.nevixity.nothingmod.Entity.ModEntities;
 import net.nevixity.nothingmod.NothingMod;
 import net.nevixity.nothingmod.item.custom.OdiumScytheItem;
 import net.nevixity.nothingmod.item.custom.SmokeBombItem;
+import net.nevixity.nothingmod.item.custom.OdiumGlaiveItem;
 import net.nevixity.nothingmod.sound.ModSounds;
 
 public class ModItems {
@@ -41,6 +41,10 @@ private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entrie
 
     public static final Item CAPYBARA_SPAWN_EGG =registerItem("capybara_spawn_egg",
             new SpawnEggItem (ModEntities.CAPYBARA, 0xa555555, 0x3b260f, new FabricItemSettings()));
+
+    public static final Item ODIUM_GLAIVE =registerItem("odium_glaive",
+            new OdiumGlaiveItem(ModToolMaterial.ODIUM, 8, -1f, new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
+
 
     public static final Item AUTUMN_FALLS_MUSIC_DISC =registerItem("autumn_falls_music_disc",
             new MusicDiscItem(9, ModSounds.AUTUMN_FALLS_DISC, new FabricItemSettings().rarity(Rarity.RARE).maxCount(1), 23));

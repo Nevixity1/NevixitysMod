@@ -7,10 +7,7 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.nevixity.nothingmod.Entity.custom.CapybaraEntity;
-import net.nevixity.nothingmod.Entity.custom.RedpandaEntity;
-import net.nevixity.nothingmod.Entity.custom.ScytheChargeProjectileEntity;
-import net.nevixity.nothingmod.Entity.custom.SmokeBombEntity;
+import net.nevixity.nothingmod.Entity.custom.*;
 import net.nevixity.nothingmod.NothingMod;
 
 public class ModEntities {
@@ -26,6 +23,10 @@ public class ModEntities {
                     .dimensions(EntityDimensions.fixed(0.25f, 0.25f)).build());
 
 
+    public static final EntityType<OdiumGlaiveEntity> ODIUM_GLAIVE = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(NothingMod.MOD_ID, "odium_glaive"),
+            FabricEntityTypeBuilder.<OdiumGlaiveEntity>create(SpawnGroup.MISC, OdiumGlaiveEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.55f, 0.55f)).build());
 
 
     public static final EntityType<CapybaraEntity> CAPYBARA = Registry.register(Registries.ENTITY_TYPE,

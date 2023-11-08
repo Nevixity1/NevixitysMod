@@ -4,7 +4,6 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.client.particle.ParticleFactory;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.nevixity.nothingmod.Entity.ModEntities;
 import net.nevixity.nothingmod.Entity.client.*;
@@ -35,6 +34,13 @@ public class NothingModClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.CAPYBARA, CapybaraRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.CAPYBARA, CapybaraModel::getTexturedModelData);
+
+        EntityRendererRegistry.register(ModEntities.ODIUM_GLAIVE, OdiumGlaiveRenderer::new);
+
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.ODIUM_GLAIVE, OdiumGlaiveModel::getTexturedModelData);
+
+
+
 
     }
 }

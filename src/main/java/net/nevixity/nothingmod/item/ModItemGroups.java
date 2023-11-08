@@ -24,7 +24,7 @@ public static final ItemGroup ODIUM_GROUP = Registry.register(Registries.ITEM_GR
                        entries.add(ModItems.AUTUMN_FALLS_MUSIC_DISC);
                    entries.add(ModItems.ODIUM_SCRAP);
                    entries.add(ModItems.ODIUM_APPLE);
-
+                  entries.add(ModItems.ODIUM_GLAIVE);
                     entries.add(ModItems.ODIUM_SCYTHE);
                     entries.add(ModItems.ODIUM_PICKAXE);
                     entries.add(ModItems.REDPANDA_SPAWN_EGG);

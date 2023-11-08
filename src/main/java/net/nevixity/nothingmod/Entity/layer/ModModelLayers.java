@@ -17,4 +17,6 @@ public static final EntityModelLayer REDPANDA =
             new EntityModelLayer(new Identifier(NothingMod.MOD_ID, "capybara"), "main");
 
 
+    public static final EntityModelLayer ODIUM_GLAIVE =
+            new EntityModelLayer(new Identifier(NothingMod.MOD_ID, "odium_glaive"), "main");
 }
