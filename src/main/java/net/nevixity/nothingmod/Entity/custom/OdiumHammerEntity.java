@@ -27,19 +27,19 @@ import net.nevixity.nothingmod.Entity.ModEntities;
 import net.nevixity.nothingmod.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
-public class OdiumGlaiveEntity extends PersistentProjectileEntity {
+public class OdiumHammerEntity extends PersistentProjectileEntity {
     private static final TrackedData<Byte> LOYALTY = DataTracker.registerData(TridentEntity.class, TrackedDataHandlerRegistry.BYTE);
     private static final TrackedData<Boolean> ENCHANTED = DataTracker.registerData(TridentEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
-    private ItemStack GlaiveStack = new ItemStack(ModItems.ODIUM_GLAIVE);
+    private ItemStack GlaiveStack = new ItemStack(ModItems.ODIUM_HAMMER);
     private boolean dealtDamage;
     public int returnTimer;
 
 
-    public OdiumGlaiveEntity(EntityType<? extends OdiumGlaiveEntity> entityType, World world) {
+    public OdiumHammerEntity(EntityType<? extends OdiumHammerEntity> entityType, World world) {
         super((EntityType<? extends PersistentProjectileEntity>) entityType, world);
     }
-    public OdiumGlaiveEntity(World world, LivingEntity owner, ItemStack stack) {
-        super(ModEntities.ODIUM_GLAIVE, owner, world);
+    public OdiumHammerEntity(World world, LivingEntity owner, ItemStack stack) {
+        super(ModEntities.ODIUM_HAMMER, owner, world);
         this.GlaiveStack = stack.copy();
         this.dataTracker.set(LOYALTY, (byte) EnchantmentHelper.getLoyalty(stack));
         this.dataTracker.set(ENCHANTED, stack.hasGlint());

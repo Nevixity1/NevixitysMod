@@ -12,7 +12,7 @@ import net.nevixity.nothingmod.Entity.ModEntities;
 import net.nevixity.nothingmod.NothingMod;
 import net.nevixity.nothingmod.item.custom.OdiumScytheItem;
 import net.nevixity.nothingmod.item.custom.SmokeBombItem;
-import net.nevixity.nothingmod.item.custom.OdiumGlaiveItem;
+import net.nevixity.nothingmod.item.custom.OdiumHammerItem;
 import net.nevixity.nothingmod.sound.ModSounds;
 
 public class ModItems {
@@ -42,8 +42,8 @@ private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entrie
     public static final Item CAPYBARA_SPAWN_EGG =registerItem("capybara_spawn_egg",
             new SpawnEggItem (ModEntities.CAPYBARA, 0xa555555, 0x3b260f, new FabricItemSettings()));
 
-    public static final Item ODIUM_GLAIVE =registerItem("odium_glaive",
-            new OdiumGlaiveItem(ModToolMaterial.ODIUM, 6, -1f, new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
+    public static final Item ODIUM_HAMMER =registerItem("odium_hammer",
+            new OdiumHammerItem(ModToolMaterial.ODIUM, 6, -1f, new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
 
 
     public static final Item AUTUMN_FALLS_MUSIC_DISC =registerItem("autumn_falls_music_disc",

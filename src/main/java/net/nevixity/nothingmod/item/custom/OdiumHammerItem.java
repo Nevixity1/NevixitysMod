@@ -13,11 +13,11 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
-import net.nevixity.nothingmod.Entity.custom.OdiumGlaiveEntity;
+import net.nevixity.nothingmod.Entity.custom.OdiumHammerEntity;
 
-public class OdiumGlaiveItem extends SwordItem {
+public class OdiumHammerItem extends SwordItem {
 
-    public OdiumGlaiveItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
+    public OdiumHammerItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }
     @Override
@@ -49,8 +49,8 @@ public class OdiumGlaiveItem extends SwordItem {
         }
         if (!world.isClient) {
             stack.damage(1, playerEntity, p -> p.sendToolBreakStatus(user.getActiveHand()));
-            OdiumGlaiveEntity tridentEntity = new OdiumGlaiveEntity(world, (LivingEntity)playerEntity, stack);
-            tridentEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0f, 2.5f, 1.0f);
+            OdiumHammerEntity tridentEntity = new OdiumHammerEntity(world, (LivingEntity)playerEntity, stack);
+            tridentEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0f, -1.5f, 1.0f);
             if (playerEntity.getAbilities().creativeMode) {
                 tridentEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
             }

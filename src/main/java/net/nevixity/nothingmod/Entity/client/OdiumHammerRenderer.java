@@ -10,21 +10,21 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RotationAxis;
-import net.nevixity.nothingmod.Entity.custom.OdiumGlaiveEntity;
+import net.nevixity.nothingmod.Entity.custom.OdiumHammerEntity;
 import net.nevixity.nothingmod.Entity.layer.ModModelLayers;
 import net.nevixity.nothingmod.NothingMod;
 
-public class OdiumGlaiveRenderer extends EntityRenderer<OdiumGlaiveEntity> {
-    public static final Identifier TEXTURE = new Identifier(NothingMod.MOD_ID, "textures/entity/odium_glaive.png");
-    protected OdiumGlaiveModel model;
+public class OdiumHammerRenderer extends EntityRenderer<OdiumHammerEntity> {
+    public static final Identifier TEXTURE = new Identifier(NothingMod.MOD_ID, "textures/entity/odium_hammer_entity.png");
+    protected OdiumHammerModel model;
 
-    public OdiumGlaiveRenderer(EntityRendererFactory.Context ctx) {
+    public OdiumHammerRenderer(EntityRendererFactory.Context ctx) {
         super(ctx);
-        model = new OdiumGlaiveModel(ctx.getPart(ModModelLayers.ODIUM_GLAIVE));
+        model = new OdiumHammerModel(ctx.getPart(ModModelLayers.ODIUM_HAMMER));
     }
 
     @Override
-    public void render(OdiumGlaiveEntity entity, float yaw, float tickDelta, MatrixStack matrices,
+    public void render(OdiumHammerEntity entity, float yaw, float tickDelta, MatrixStack matrices,
                        VertexConsumerProvider vertexConsumers, int light) {
         matrices.push();
         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(MathHelper.lerp(tickDelta, entity.prevYaw, entity.getYaw()) - 90.0F));
@@ -37,7 +37,7 @@ public class OdiumGlaiveRenderer extends EntityRenderer<OdiumGlaiveEntity> {
     }
 
     @Override
-    public Identifier getTexture(OdiumGlaiveEntity entity) {
+    public Identifier getTexture(OdiumHammerEntity entity) {
         return TEXTURE;
     }
 }

@@ -23,9 +23,9 @@ public class ModEntities {
                     .dimensions(EntityDimensions.fixed(0.25f, 0.25f)).build());
 
 
-    public static final EntityType<OdiumGlaiveEntity> ODIUM_GLAIVE = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(NothingMod.MOD_ID, "odium_glaive"),
-            FabricEntityTypeBuilder.<OdiumGlaiveEntity>create(SpawnGroup.MISC, OdiumGlaiveEntity::new)
+    public static final EntityType<OdiumHammerEntity> ODIUM_HAMMER = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(NothingMod.MOD_ID, "odium_hammer"),
+            FabricEntityTypeBuilder.<OdiumHammerEntity>create(SpawnGroup.MISC, OdiumHammerEntity::new)
                     .dimensions(EntityDimensions.fixed(0.55f, 0.55f)).build());
 
 
