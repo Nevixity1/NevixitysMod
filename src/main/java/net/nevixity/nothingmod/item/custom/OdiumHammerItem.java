@@ -34,7 +34,7 @@ public class OdiumHammerItem extends SwordItem {
 
     @Override
     public int getMaxUseTime(ItemStack stack) {
-        return 72000;
+        return 2000;
     }
 
     @Override
@@ -50,7 +50,7 @@ public class OdiumHammerItem extends SwordItem {
         if (!world.isClient) {
             stack.damage(1, playerEntity, p -> p.sendToolBreakStatus(user.getActiveHand()));
             OdiumHammerEntity tridentEntity = new OdiumHammerEntity(world, (LivingEntity)playerEntity, stack);
-            tridentEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0f, -1.5f, 1.0f);
+            tridentEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0f, 2.5f, 1.0f);
             if (playerEntity.getAbilities().creativeMode) {
                 tridentEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
             }
