@@ -199,7 +199,7 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
 
     @Override
     protected float getDragInWater() {
-        return 0.99f;
+        return 0.79f;
     }
 
     @Override

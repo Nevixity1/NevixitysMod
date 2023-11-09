@@ -43,7 +43,7 @@ private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entrie
             new SpawnEggItem (ModEntities.CAPYBARA, 0xa555555, 0x3b260f, new FabricItemSettings()));
 
     public static final Item ODIUM_HAMMER =registerItem("odium_hammer",
-            new OdiumHammerItem(ModToolMaterial.ODIUM, 6, -2.5f, new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
+            new OdiumHammerItem(ModToolMaterial.ODIUM, 5, -3.2f, new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
 
 
     public static final Item AUTUMN_FALLS_MUSIC_DISC =registerItem("autumn_falls_music_disc",

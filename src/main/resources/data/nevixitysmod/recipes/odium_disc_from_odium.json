@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "X": {
+      "item": "nevixitysmod:odium_ingot"
+    }
+  },
+  "pattern": [
+    "   ",
+    "#X#",
+    "   "
+  ],
+  "result": {
+    "item": "nevixitysmod:autumn_falls_music_disc"
+  },
+  "show_notification": true
+}
