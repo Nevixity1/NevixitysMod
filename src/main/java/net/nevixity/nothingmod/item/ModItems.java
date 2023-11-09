@@ -43,13 +43,13 @@ private static void addItemsToIngredientsItemGroup(FabricItemGroupEntries entrie
             new SpawnEggItem (ModEntities.CAPYBARA, 0xa555555, 0x3b260f, new FabricItemSettings()));
 
     public static final Item ODIUM_GLAIVE =registerItem("odium_glaive",
-            new OdiumGlaiveItem(ModToolMaterial.ODIUM, 8, -1f, new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
+            new OdiumGlaiveItem(ModToolMaterial.ODIUM, 6, -1f, new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
 
 
     public static final Item AUTUMN_FALLS_MUSIC_DISC =registerItem("autumn_falls_music_disc",
             new MusicDiscItem(9, ModSounds.AUTUMN_FALLS_DISC, new FabricItemSettings().rarity(Rarity.RARE).maxCount(1), 23));
 public static final Item SMOKE_BOMB =registerItem("smoke_bomb",
-        new SmokeBombItem(new FabricItemSettings().rarity(Rarity.EPIC).maxCount(16)));
+        new SmokeBombItem(new FabricItemSettings().rarity(Rarity.RARE).maxCount(16)));
 
     public static void registerModItems() {
           NothingMod.LOGGER.info("Registering Mod Items for" + NothingMod.MOD_ID);

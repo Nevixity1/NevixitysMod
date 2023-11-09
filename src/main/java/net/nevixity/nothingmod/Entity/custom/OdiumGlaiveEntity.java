@@ -112,7 +112,7 @@ public class OdiumGlaiveEntity extends PersistentProjectileEntity {
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
         Entity entity = entityHitResult.getEntity();
-        float f = 8.0f;
+        float f = 16.0f;
         if (entity instanceof LivingEntity) {
             LivingEntity livingEntity = (LivingEntity)entity;
             f += EnchantmentHelper.getAttackDamage(this.GlaiveStack, livingEntity.getGroup());

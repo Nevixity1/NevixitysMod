@@ -50,7 +50,7 @@ public class OdiumGlaiveItem extends SwordItem {
         if (!world.isClient) {
             stack.damage(1, playerEntity, p -> p.sendToolBreakStatus(user.getActiveHand()));
             OdiumGlaiveEntity tridentEntity = new OdiumGlaiveEntity(world, (LivingEntity)playerEntity, stack);
-            tridentEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 5.0f, 2.5f, 1.0f);
+            tridentEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0f, 2.5f, 1.0f);
             if (playerEntity.getAbilities().creativeMode) {
                 tridentEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
             }
