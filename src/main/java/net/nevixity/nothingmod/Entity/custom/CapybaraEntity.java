@@ -223,7 +223,7 @@ public class CapybaraEntity extends TameableEntity implements Mount {
         }
 
         if (isTamed() && hand == Hand.MAIN_HAND && item != itemForTaming && !isBreedingItem(itemstack) && isOwner(player)) {
-            if(!player.isSneaking()) {
+            if (!player.isSneaking()) {
                 setRiding(player);
             } else {
                 boolean sitting = !isSitting();
@@ -236,10 +236,6 @@ public class CapybaraEntity extends TameableEntity implements Mount {
 
         return super.interactMob(player, hand);
     }
-
-
-
-
 
 
     @Override
@@ -265,7 +261,7 @@ public class CapybaraEntity extends TameableEntity implements Mount {
 
     @Override
     public void travel(Vec3d movementInput) {
-        if(this.hasPassengers() && getControllingPassenger() instanceof PlayerEntity) {
+        if (this.hasPassengers() && getControllingPassenger() instanceof PlayerEntity) {
             LivingEntity livingentity = this.getControllingPassenger();
             this.setYaw(livingentity.getYaw());
             this.prevYaw = this.getYaw();
@@ -280,9 +276,9 @@ public class CapybaraEntity extends TameableEntity implements Mount {
             }
 
             if (this.isLogicalSideForUpdatingMovement()) {
-                float newSpeed = (float)this.getAttributeValue(EntityAttributes.GENERIC_MOVEMENT_SPEED);
+                float newSpeed = (float) this.getAttributeValue(EntityAttributes.GENERIC_MOVEMENT_SPEED);
 
-                if(MinecraftClient.getInstance().options.sprintKey.isPressed()) {
+                if (MinecraftClient.getInstance().options.sprintKey.isPressed()) {
                     newSpeed *= 1.5f;
                 }
 
@@ -296,29 +292,32 @@ public class CapybaraEntity extends TameableEntity implements Mount {
 
     @Override
     public Vec3d updatePassengerForDismount(LivingEntity passenger) {
-        Direction direction = this.getMovementDirection();
-        if (direction.getAxis() == Direction.Axis.Y) {
-            return super.updatePassengerForDismount(passenger);
-        }
-        int[][] is = Dismounting.getDismountOffsets(direction);
-        BlockPos blockPos = this.getBlockPos();
-        BlockPos.Mutable mutable = new BlockPos.Mutable();
-        for (EntityPose entityPose : passenger.getPoses()) {
-            Box box = passenger.getBoundingBox(entityPose);
-            for (int[] js : is) {
-                mutable.set(blockPos.getX() + js[0], blockPos.getY(), blockPos.getZ() + js[1]);
-                double d = this.getWorld().getDismountHeight(mutable);
-                if (!Dismounting.canDismountInBlock(d)) continue;
-                Vec3d vec3d = Vec3d.ofCenter(mutable, d);
-                if (!Dismounting.canPlaceEntityAt(this.getWorld(), passenger, box.offset(vec3d))) continue;
-                passenger.setPose(entityPose);
-                return vec3d;
+        if (isSitting()) {
+            this.setInSittingPose(true);
+        } else {
+            this.setInSittingPose(false);
+            Direction direction = this.getMovementDirection();
+            if (direction.getAxis() == Direction.Axis.Y) {
+                return super.updatePassengerForDismount(passenger);
+            }
+            int[][] is = Dismounting.getDismountOffsets(direction);
+            BlockPos blockPos = this.getBlockPos();
+            BlockPos.Mutable mutable = new BlockPos.Mutable();
+            for (EntityPose entityPose : passenger.getPoses()) {
+                Box box = passenger.getBoundingBox(entityPose);
+                for (int[] js : is) {
+                    mutable.set(blockPos.getX() + js[0], blockPos.getY(), blockPos.getZ() + js[1]);
+                    double d = this.getWorld().getDismountHeight(mutable);
+                    if (!Dismounting.canDismountInBlock(d)) continue;
+                    Vec3d vec3d = Vec3d.ofCenter(mutable, d);
+                    if (!Dismounting.canPlaceEntityAt(this.getWorld(), passenger, box.offset(vec3d))) continue;
+                    passenger.setPose(entityPose);
+                    return vec3d;
+                }
             }
         }
         return super.updatePassengerForDismount(passenger);
     }
-
-
 /* BREEDABLE */
 
     @Override
