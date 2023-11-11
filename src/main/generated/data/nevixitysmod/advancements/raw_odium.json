@@ -15,7 +15,7 @@
   },
   "display": {
     "announce_to_chat": true,
-    "background": "nevixitysmod:block/odium_block",
+    "background": "nevixitysmod:textures/block/odium_block.png",
     "description": {
       "text": "Obtain Raw Odium"
     },
