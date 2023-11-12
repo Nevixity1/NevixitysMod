@@ -1,21 +1,19 @@
 package net.nevixity.nothingmod.item;
 
-import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
 import java.util.function.Supplier;
 
 public enum ModToolMaterial implements ToolMaterial {
-    ODIUM(5,2500, 15.0f, 4.5f, 17,
-            () -> Ingredient.ofItems(ModItems.ODIUM_INGOT));
+    ODIUM(5, 2500, 15.0f, 4.5f, 17, () -> Ingredient.ofItems(ModItems.ODIUM_INGOT));
 
     private final int miningLevel;
     private final int itemDurability;
     private final float miningSpeed;
     private final float attackDamage;
     private final int enchantability;
-   private final Supplier<Ingredient> repairIngredient;
+    private final Supplier<Ingredient> repairIngredient;
 
     ModToolMaterial(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
         this.miningLevel = miningLevel;
@@ -25,7 +23,6 @@ public enum ModToolMaterial implements ToolMaterial {
         this.enchantability = enchantability;
         this.repairIngredient = repairIngredient;
     }
-
 
     @Override
     public int getDurability() {

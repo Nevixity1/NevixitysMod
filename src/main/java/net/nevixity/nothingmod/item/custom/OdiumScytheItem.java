@@ -10,7 +10,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import net.nevixity.nothingmod.Entity.custom.ScytheChargeProjectileEntity;
+import net.nevixity.nothingmod.entity.custom.ScytheChargeProjectileEntity;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;

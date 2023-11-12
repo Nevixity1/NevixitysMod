@@ -2,16 +2,17 @@
   "schemaVersion": 1,
   "id": "nevixitysmod",
   "version": "${version}",
-  "name": "NevixitysMod",
+  "name": "Nevixity's Mod",
   "description": "a custom made mod",
-  "authors": ["Nevixity"],
+  "authors": [
+    "Nevixity"
+  ],
   "contact": {
     "repo": "https://github.com/tomer/NothingModsmp"
   },
   "license": "All-Rights-Reserved",
   "environment": "*",
   "entrypoints": {
-
     "fabric-datagen": [
       "net.nevixity.nothingmod.NothingModDataGenerator"
 
