@@ -2,8 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "nevixitysmod:item/odium_hammer",
-		"particle": "odium_hammer"
+		"0": "nevixitysmod:item/odium_hammer"
 	},
 	"elements": [
 		{
@@ -97,13 +96,13 @@
 		},
 		"firstperson_righthand": {
 			"rotation": [-8.5, -77.5, 0],
-			"translation": [0.5, 0, -4.25],
-			"scale": [0.86719, 0.86719, 0.86719]
+			"translation": [7.5, -1.5, -5.5],
+			"scale": [0.72071, 0.75586, 0.72071]
 		},
 		"firstperson_lefthand": {
 			"rotation": [-8.5, -77.5, 0],
-			"translation": [0.5, 0, -4.25],
-			"scale": [0.86719, 0.86719, 0.86719]
+			"translation": [7.5, -1.5, -5.5],
+			"scale": [0.72071, 0.75586, 0.72071]
 		},
 		"ground": {
 			"rotation": [24.26, 34.67, -71.67],

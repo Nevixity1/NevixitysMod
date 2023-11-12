@@ -11,7 +11,6 @@ import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
-import net.minecraft.entity.projectile.TridentEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
@@ -28,8 +27,8 @@ import net.nevixity.nothingmod.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 public class OdiumHammerEntity extends PersistentProjectileEntity {
-    private static final TrackedData<Byte> LOYALTY = DataTracker.registerData(TridentEntity.class, TrackedDataHandlerRegistry.BYTE);
-    private static final TrackedData<Boolean> ENCHANTED = DataTracker.registerData(TridentEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+    private static final TrackedData<Byte> LOYALTY = DataTracker.registerData(OdiumHammerEntity.class, TrackedDataHandlerRegistry.BYTE);
+    private static final TrackedData<Boolean> ENCHANTED = DataTracker.registerData(OdiumHammerEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private ItemStack HammerStack = new ItemStack(ModItems.ODIUM_HAMMER);
     private boolean dealtDamage;
     public int returnTimer;
