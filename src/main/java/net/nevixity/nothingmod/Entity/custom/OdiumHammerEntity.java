@@ -30,7 +30,7 @@ import org.jetbrains.annotations.Nullable;
 public class OdiumHammerEntity extends PersistentProjectileEntity {
     private static final TrackedData<Byte> LOYALTY = DataTracker.registerData(TridentEntity.class, TrackedDataHandlerRegistry.BYTE);
     private static final TrackedData<Boolean> ENCHANTED = DataTracker.registerData(TridentEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
-    private ItemStack GlaiveStack = new ItemStack(ModItems.ODIUM_HAMMER);
+    private ItemStack HammerStack = new ItemStack(ModItems.ODIUM_HAMMER);
     private boolean dealtDamage;
     public int returnTimer;
 
@@ -40,7 +40,7 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
     }
     public OdiumHammerEntity(World world, LivingEntity owner, ItemStack stack) {
         super(ModEntities.ODIUM_HAMMER, owner, world);
-        this.GlaiveStack = stack.copy();
+        this.HammerStack = stack.copy();
         this.dataTracker.set(LOYALTY, (byte) EnchantmentHelper.getLoyalty(stack));
         this.dataTracker.set(ENCHANTED, stack.hasGlint());
     }
@@ -93,7 +93,7 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
 
     @Override
     protected ItemStack asItemStack() {
-        return this.GlaiveStack.copy();
+        return this.HammerStack.copy();
     }
 
     public boolean isEnchanted() {
@@ -115,7 +115,7 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
         float f = 16.0f;
         if (entity instanceof LivingEntity) {
             LivingEntity livingEntity = (LivingEntity)entity;
-            f += EnchantmentHelper.getAttackDamage(this.GlaiveStack, livingEntity.getGroup());
+            f += EnchantmentHelper.getAttackDamage(this.HammerStack, livingEntity.getGroup());
 
         }
         Entity entity2 = this.getOwner();
@@ -152,7 +152,7 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
     }
 
     public boolean hasChanneling() {
-        return EnchantmentHelper.hasChanneling(this.GlaiveStack);
+        return EnchantmentHelper.hasChanneling(this.HammerStack);
     }
 
     @Override
@@ -176,16 +176,16 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
         if (nbt.contains("Trident", NbtElement.COMPOUND_TYPE)) {
-            this.GlaiveStack = ItemStack.fromNbt(nbt.getCompound("Trident"));
+            this.HammerStack = ItemStack.fromNbt(nbt.getCompound("Trident"));
         }
         this.dealtDamage = nbt.getBoolean("DealtDamage");
-        this.dataTracker.set(LOYALTY, (byte)EnchantmentHelper.getLoyalty(this.GlaiveStack));
+        this.dataTracker.set(LOYALTY, (byte)EnchantmentHelper.getLoyalty(this.HammerStack));
     }
 
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
-        nbt.put("Trident", this.GlaiveStack.writeNbt(new NbtCompound()));
+        nbt.put("Trident", this.HammerStack.writeNbt(new NbtCompound()));
         nbt.putBoolean("DealtDamage", this.dealtDamage);
     }
 
