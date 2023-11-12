@@ -27,6 +27,7 @@ import net.nevixity.nothingmod.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 public class OdiumHammerEntity extends PersistentProjectileEntity {
+    private static final TrackedData<Byte> LOYALTY = DataTracker.registerData(OdiumHammerEntity.class, TrackedDataHandlerRegistry.BYTE);
     private static final TrackedData<Boolean> ENCHANTED = DataTracker.registerData(OdiumHammerEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     public int returnTimer;
     private ItemStack hammerStack = new ItemStack(ModItems.ODIUM_HAMMER);
