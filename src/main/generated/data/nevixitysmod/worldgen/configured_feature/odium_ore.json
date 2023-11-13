@@ -6,7 +6,7 @@
     "targets": [
       {
         "state": {
-          "Name": "nevixitysmod:odium_ore_block"
+          "Name": "nevixitysmod:odium_ore"
         },
         "target": {
           "block": "minecraft:end_stone",

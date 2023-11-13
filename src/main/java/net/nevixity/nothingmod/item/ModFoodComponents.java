@@ -10,5 +10,6 @@ public class ModFoodComponents {
             .statusEffect(new StatusEffectInstance(StatusEffects.SATURATION, 400, 0), 1.0f)
             .statusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 1400, 2), 1.0f)
             .statusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 600, 0), 1.0f)
-            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 400, 2),1.0f).build();
+            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 400, 2),1.0f)
+            .build();
 }

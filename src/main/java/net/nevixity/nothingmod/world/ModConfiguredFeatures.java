@@ -12,7 +12,6 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.nevixity.nothingmod.NothingMod;
 import net.nevixity.nothingmod.block.ModBlocks;
 
@@ -25,16 +24,14 @@ public class ModConfiguredFeatures {
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest endReplaceables = new BlockMatchRuleTest(Blocks.END_STONE);
 
-        List<OreFeatureConfig.Target> endOdiumOres =
-                List.of(OreFeatureConfig.createTarget(endReplaceables, ModBlocks.ODIUM_ORE.getDefaultState()));
-
+        List<OreFeatureConfig.Target> endOdiumOres = List.of(OreFeatureConfig.createTarget(endReplaceables, ModBlocks.ODIUM_ORE.getDefaultState()));
 
         register(context, ODIUM_ORE_KEY, Feature.ORE, new OreFeatureConfig(endOdiumOres, 4));
     }
 
 
-    public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(NothingMod.MOD_ID, name));
+    public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String id) {
+        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(NothingMod.MOD_ID, id));
     }
 
     private static <FC extends FeatureConfig, F extends Feature<FC>> void register(Registerable<ConfiguredFeature<?, ?>> context,

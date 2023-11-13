@@ -1,6 +1,7 @@
 package net.nevixity.nothingmod.world;
 
 import net.minecraft.registry.Registerable;
+import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -16,32 +17,27 @@ import java.util.List;
 public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> ODIUM_ORE_PLACED_KEY = registerKey("odium_ore_placed");
 
-
     public static void bootstrap(Registerable<PlacedFeature> context) {
-        var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
-
+        RegistryEntryLookup<ConfiguredFeature<?, ?>> configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         register(context, ODIUM_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.ODIUM_ORE_KEY),
                 ModOrePlacement.modifiersWithCount(1, // Veins per Chunk
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
-
-
+                HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
     }
 
 
-    public static RegistryKey<PlacedFeature> registerKey(String name) {
-        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(NothingMod.MOD_ID, name));
+    public static RegistryKey<PlacedFeature> registerKey(String id) {
+        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(NothingMod.MOD_ID, id));
     }
 
-    private static void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key, RegistryEntry<ConfiguredFeature<?, ?>> configuration,
+    private static void register(Registerable<PlacedFeature> featureRegisterable, RegistryKey<PlacedFeature> key, RegistryEntry<ConfiguredFeature<?, ?>> feature,
                                  List<PlacementModifier> modifiers) {
-        context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
+        featureRegisterable.register(key, new PlacedFeature(feature, List.copyOf(modifiers)));
     }
 
-    private static <FC extends FeatureConfig, F extends Feature<FC>> void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key,
-                                                                                   RegistryEntry<ConfiguredFeature<?, ?>> configuration,
-                                                                                   PlacementModifier... modifiers) {
-        register(context, key, configuration, List.of(modifiers));
+    private static void register(Registerable<PlacedFeature> featureRegisterable, RegistryKey<PlacedFeature> key, RegistryEntry<ConfiguredFeature<?, ?>> feature,
+                                 PlacementModifier ... modifiers) {
+        register(featureRegisterable, key, feature, List.of(modifiers));
     }
 }
 
