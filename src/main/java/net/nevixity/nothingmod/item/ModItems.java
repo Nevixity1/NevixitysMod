@@ -20,9 +20,9 @@ public class ModItems {
     public static final Item ODIUM_SCRAP = registerItem("odium_scrap", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item ODIUM_APPLE = registerItem("odium_apple", new Item(new FabricItemSettings().rarity(Rarity.EPIC).food(ModFoodComponents.ODIUM_APPLE).fireproof()));
     public static final Item RAW_ODIUM = registerItem("raw_odium", new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
-    public static final Item ODIUM_PICKAXE = registerItem("odium_pickaxe", new PickaxeItem(ModToolMaterial.ODIUM, -1, -2f,
+    public static final Item ODIUM_PICKAXE = registerItem("odium_pickaxe", new PickaxeItem(ModToolMaterials.ODIUM, -1, -2f,
             new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
-    public static final Item ODIUM_SCYTHE = registerItem("odium_scythe", new OdiumScytheItem(ModToolMaterial.ODIUM, 4, -2.5f,
+    public static final Item ODIUM_SCYTHE = registerItem("odium_scythe", new OdiumScytheItem(ModToolMaterials.ODIUM, 4, -2.5f,
             new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item REDPANDA_SPAWN_EGG = registerItem("redpanda_spawn_egg", new SpawnEggItem(ModEntities.REDPANDA, 0xa53314, 0x3b260f,
             new FabricItemSettings()));
@@ -42,7 +42,7 @@ public class ModItems {
     }
 
     public static void registerModItems() {
-        NothingMod.LOGGER.info("Registering Mod Items for" + NothingMod.MOD_ID);
+        NothingMod.LOGGER.info("Registering Mod Items for " + NothingMod.MOD_ID);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToIngredientsItemGroup);
     }
 }

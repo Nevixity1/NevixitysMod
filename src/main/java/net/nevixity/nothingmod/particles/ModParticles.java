@@ -16,6 +16,6 @@ public class ModParticles {
     }
 
     public static void registerParticles() {
-        NothingMod.LOGGER.info("Registering Particles for" + NothingMod.MOD_ID);
+        NothingMod.LOGGER.info("Registering Particles for " + NothingMod.MOD_ID);
     }
 }

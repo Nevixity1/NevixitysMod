@@ -1,0 +1,22 @@
+{
+  "block.nevixitysmod.odium_block": "Block Of Odium",
+  "block.nevixitysmod.odium_ore": "Odium Ore",
+  "entity.nevixitysmod.capybara": "Capybara",
+  "entity.nevixitysmod.odium_hammer": "Odium Hammer",
+  "entity.nevixitysmod.redpanda": "Red Panda",
+  "entity.nevixitysmod.scythe_charge_projectile": "Thrown Scythe Charge",
+  "entity.nevixitysmod.smoke_bomb_projectile": "Thrown Smoke Bomb",
+  "item.nevixitysmod.capybara_spawn_egg": "Capybara Spawn Egg",
+  "item.nevixitysmod.music_disc_autumn_falls": "Music Disc",
+  "item.nevixitysmod.music_disc_autumn_falls.desc": "Nevixity - Autumn Falls",
+  "item.nevixitysmod.odium_apple": "Odium Apple",
+  "item.nevixitysmod.odium_hammer": "Odium Hammer",
+  "item.nevixitysmod.odium_ingot": "Odium Ingot",
+  "item.nevixitysmod.odium_pickaxe": "Odium Pickaxe",
+  "item.nevixitysmod.odium_scrap": "Odium Scrap",
+  "item.nevixitysmod.odium_scythe": "Odium Scythe",
+  "item.nevixitysmod.odium_scythe.tooltip": "Shoots Toxic Odium Flame Upon Right Click",
+  "item.nevixitysmod.raw_odium": "Raw Odium",
+  "item.nevixitysmod.redpanda_spawn_egg": "Red Panda Spawn Egg",
+  "item.nevixitysmod.smoke_bomb": "Smoke Bomb"
+}

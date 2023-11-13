@@ -32,7 +32,6 @@ public class SmokeBombSmokeParticle extends SpriteBillboardParticle {
         }
 
         public Particle createParticle(DefaultParticleType particleType, ClientWorld clientWorld, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
-
             return new SmokeBombSmokeParticle(clientWorld, x ,y ,z, this.sprites, velocityX, velocityY, velocityZ);
         }
     }

@@ -14,7 +14,8 @@ import net.minecraft.util.Rarity;
 import net.nevixity.nothingmod.NothingMod;
 
 public class ModBlocks {
-    public static final Block ODIUM_BLOCK = registerBlock("odium_block", new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
+    public static final Block ODIUM_BLOCK = registerBlock("odium_block", new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK).sounds(BlockSoundGroup.AMETHYST_BLOCK)),
+            new FabricItemSettings().fireproof().rarity(Rarity.EPIC));
 
     public static final Block ODIUM_ORE = registerBlock("odium_ore", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).sounds(BlockSoundGroup.MEDIUM_AMETHYST_BUD)),
             new FabricItemSettings().fireproof().rarity(Rarity.EPIC));
@@ -37,6 +38,6 @@ public class ModBlocks {
     }
 
     public static void registerModBlocks() {
-        NothingMod.LOGGER.info("Registering ModBlocks for" + NothingMod.MOD_ID);
+        NothingMod.LOGGER.info("Registering ModBlocks for " + NothingMod.MOD_ID);
     }
 }
