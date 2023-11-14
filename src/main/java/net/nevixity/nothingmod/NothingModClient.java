@@ -28,6 +28,5 @@ public class NothingModClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.REDPANDA, RedpandaModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.CAPYBARA, CapybaraModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.ODIUM_HAMMER, OdiumHammerEntityModel::getTexturedModelData);
-
     }
 }

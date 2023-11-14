@@ -112,7 +112,6 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
         float f = 16.0f;
         if (target instanceof LivingEntity livingEntity) {
             f += EnchantmentHelper.getAttackDamage(this.hammerStack, livingEntity.getGroup());
-
         }
         Entity owner = this.getOwner();
         DamageSource damageSource = this.getDamageSources().trident(this, owner == null ? this : owner);

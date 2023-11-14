@@ -18,6 +18,7 @@ public class NothingModDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModAdvancementProvider::new);
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModBlockTagProvider::new);
+		pack.addProvider(ModLanguageProvider::new);
     }
 
     @Override

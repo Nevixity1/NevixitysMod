@@ -24,27 +24,27 @@ public class OdiumScytheItem extends SwordItem {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        ItemStack itemstack = user.getStackInHand(hand);
+        ItemStack stack = user.getStackInHand(hand);
 
         user.getItemCooldownManager().set(this, 80);
 
         if (!world.isClient()) {
-             ScytheChargeProjectileEntity scytheChargeProjectile = new ScytheChargeProjectileEntity(world, user);
+            ScytheChargeProjectileEntity scytheChargeProjectile = new ScytheChargeProjectileEntity(world, user);
             scytheChargeProjectile.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 0.25F);
             world.spawnEntity(scytheChargeProjectile);
-         }
+        }
 
         user.incrementStat(Stats.USED.getOrCreateStat(this));
         if (!user.getAbilities().creativeMode) {
-            itemstack.damage(1, user, p -> p.sendToolBreakStatus(hand));
+            stack.damage(1, user, p -> p.sendToolBreakStatus(hand));
         }
 
-        return TypedActionResult.success(itemstack, world.isClient());
+        return TypedActionResult.success(stack, world.isClient());
     }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("tooltip.nevixitysmod.odium_scythe.tooltip"));
+        tooltip.add(Text.translatable("item.nevixitysmod.odium_scythe.tooltip"));
 
         super.appendTooltip(stack, world, tooltip, context);
     }

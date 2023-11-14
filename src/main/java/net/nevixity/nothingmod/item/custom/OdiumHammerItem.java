@@ -12,6 +12,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolItem;
 import net.minecraft.item.Vanishable;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -22,13 +23,14 @@ import net.minecraft.util.UseAction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.nevixity.nothingmod.entity.custom.OdiumHammerEntity;
+import net.nevixity.nothingmod.item.ModToolMaterials;
 
-public class OdiumHammerItem extends Item implements Vanishable {
+public class OdiumHammerItem extends ToolItem implements Vanishable {
     public static final float ATTACK_DAMAGE = 9.5f;
     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
 
     public OdiumHammerItem(Item.Settings settings) {
-        super(settings);
+        super(ModToolMaterials.ODIUM, settings);
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Tool modifier",
                 ATTACK_DAMAGE, EntityAttributeModifier.Operation.ADDITION));
@@ -50,6 +52,11 @@ public class OdiumHammerItem extends Item implements Vanishable {
     @Override
     public int getMaxUseTime(ItemStack stack) {
         return 72000;
+    }
+
+    @Override
+    public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
+        return stack;
     }
 
     @Override

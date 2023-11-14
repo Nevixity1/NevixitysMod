@@ -33,6 +33,6 @@ public class ModItemGroups {
                     }).build());
 
     public static void registerItemGroups() {
-        NothingMod.LOGGER.info("Registering Item Groups for" + NothingMod.MOD_ID);
+        NothingMod.LOGGER.info("Registering Item Groups for " + NothingMod.MOD_ID);
     }
 }
