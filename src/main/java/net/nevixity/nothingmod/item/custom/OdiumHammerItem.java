@@ -121,5 +121,3 @@ public class OdiumHammerItem extends ToolItem implements Vanishable {
         return 1;
     }
 }
-
-
