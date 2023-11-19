@@ -182,7 +182,7 @@ public class RedpandaEntity extends TameableEntity {
                 return ActionResult.CONSUME;
             }
             if (!player.getAbilities().creativeMode) {
-                stack.decrement(5);
+                stack.decrement(1);
             }
             super.setOwner(player);
             this.navigation.recalculatePath();
