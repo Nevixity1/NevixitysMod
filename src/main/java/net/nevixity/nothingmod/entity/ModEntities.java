@@ -22,7 +22,7 @@ public class ModEntities {
 
     public static final EntityType<OdiumHammerEntity> ODIUM_HAMMER = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(NothingMod.MOD_ID, "odium_hammer"), FabricEntityTypeBuilder.<OdiumHammerEntity>create(SpawnGroup.MISC, OdiumHammerEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.55f, 0.55f)).build());
+                    .dimensions(EntityDimensions.fixed(0.55f, 0.55f)).fireImmune().build());
 
     public static final EntityType<CapybaraEntity> CAPYBARA = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(NothingMod.MOD_ID, "capybara"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CapybaraEntity::new)

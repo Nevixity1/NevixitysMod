@@ -14,13 +14,17 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.nevixity.nothingmod.entity.ModEntities;
 import net.nevixity.nothingmod.item.ModItems;
@@ -31,6 +35,7 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
     public int returnTimer;
     private ItemStack hammerStack = new ItemStack(ModItems.ODIUM_HAMMER);
     private boolean dealtDamage;
+    private int explosionPower = 2;
 
     public OdiumHammerEntity(EntityType<? extends OdiumHammerEntity> entityType, World world) {
         super(entityType, world);
@@ -52,6 +57,8 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
     public void tick() {
         if (this.inGroundTime > 4) {
             this.dealtDamage = true;
+
+
         }
         Entity entity = this.getOwner();
         double loyaltyLevel = 3;
@@ -77,7 +84,10 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
             }
         }
         super.tick();
-    }
+
+        }
+
+
 
     private boolean isOwnerAlive() {
         Entity entity = this.getOwner();
@@ -102,12 +112,15 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
     protected EntityHitResult getEntityCollision(Vec3d currentPosition, Vec3d nextPosition) {
         if (this.dealtDamage) {
             return null;
+
+
         }
         return super.getEntityCollision(currentPosition, nextPosition);
     }
 
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
+
         Entity target = entityHitResult.getEntity();
         float f = 16.0f;
         if (target instanceof LivingEntity livingEntity) {
@@ -143,7 +156,9 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
             }
         }
         this.playSound(soundEvent, soundVolume, 1.0f);
+        this.getWorld().createExplosion((Entity) this, this.getX(), this.getY(), this.getZ(), (float)this.explosionPower, World.ExplosionSourceType.NONE);
     }
+
 
     public boolean hasChanneling() {
         return EnchantmentHelper.hasChanneling(this.hammerStack);
@@ -197,5 +212,16 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
     @Override
     public boolean shouldRender(double cameraX, double cameraY, double cameraZ) {
         return true;
+    }
+    @Override
+    protected void onHit(LivingEntity target) {
+        super.onHit(target);
+        this.getWorld().createExplosion((Entity) this, this.getX(), this.getY(), this.getZ(), (float) this.explosionPower, World.ExplosionSourceType.NONE);
+    }
+
+    @Override
+    protected void onBlockHit(BlockHitResult blockHitResult) {
+        super.onBlockHit(blockHitResult);
+        this.getWorld().createExplosion((Entity) this, this.getX(), this.getY(), this.getZ(), (float) this.explosionPower, World.ExplosionSourceType.NONE);
     }
 }
