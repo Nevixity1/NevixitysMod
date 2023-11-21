@@ -61,11 +61,10 @@ public class BruteBossEntity extends HostileEntity {
         ;
 
         this.goalSelector.add(1, new BruteBossAttackGoal(this, 1.1D, true));
-
+        this.targetSelector.add(1, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
         this.goalSelector.add(6, new WanderAroundFarGoal(this, 1.0D));
-        this.goalSelector.add(7, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
         this.goalSelector.add(8, new LookAroundGoal(this));
-
+        this.goalSelector.add(9, new LookAtEntityGoal(this, PlayerEntity.class, 15.0f, 1.0f));
         this.goalSelector.add(1, new RevengeGoal(this));
     }
 
