@@ -9,4 +9,6 @@ public class ModModelLayers {
     public static final EntityModelLayer REDPANDA = new EntityModelLayer(new Identifier(NothingMod.MOD_ID, "redpanda"), "main");
     public static final EntityModelLayer CAPYBARA = new EntityModelLayer(new Identifier(NothingMod.MOD_ID, "capybara"), "main");
     public static final EntityModelLayer ODIUM_HAMMER = new EntityModelLayer(new Identifier(NothingMod.MOD_ID, "odium_hammer"), "main");
+
+    public static final EntityModelLayer BRUTE_BOSS = new EntityModelLayer(new Identifier(NothingMod.MOD_ID, "brute_boss"), "main");
 }

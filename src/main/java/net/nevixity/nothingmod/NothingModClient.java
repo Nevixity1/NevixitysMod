@@ -23,10 +23,14 @@ public class NothingModClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.SMOKE_BOMB_PROJECTILE, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(ModEntities.CAPYBARA, CapybaraRenderer::new);
         EntityRendererRegistry.register(ModEntities.ODIUM_HAMMER, OdiumHammerEntityRenderer::new);
+        EntityRendererRegistry.register(ModEntities.BRUTE_BOSS, BruteBossRenderer::new);
+
 
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.SCYTHE_CHARGE_PROJECTILE, ScytheChargeProjectileModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.REDPANDA, RedpandaModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.CAPYBARA, CapybaraModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.ODIUM_HAMMER, OdiumHammerEntityModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BRUTE_BOSS, BruteBossModel::getTexturedModelData);
+
     }
 }

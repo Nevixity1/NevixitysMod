@@ -32,6 +32,14 @@ public class ModEntities {
             new Identifier(NothingMod.MOD_ID, "redpanda"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, RedpandaEntity::new)
                     .dimensions(EntityDimensions.fixed(0.55f, 0.35f)).build());
 
+
+    public static final EntityType<BruteBossEntity> BRUTE_BOSS = Registry.register(Registries.ENTITY_TYPE,
+            new Identifier(NothingMod.MOD_ID, "brute_boss"), FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, BruteBossEntity::new)
+                    .dimensions(EntityDimensions.fixed(1.85f, 3.55f)).build());
+
+
+
+
     public static void registerModEntites() {
         NothingMod.LOGGER.info("Registering ModEntities for " + NothingMod.MOD_ID);
     }
