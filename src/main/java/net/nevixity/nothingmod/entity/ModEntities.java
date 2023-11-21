@@ -35,7 +35,7 @@ public class ModEntities {
 
     public static final EntityType<BruteBossEntity> BRUTE_BOSS = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(NothingMod.MOD_ID, "brute_boss"), FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, BruteBossEntity::new)
-                    .dimensions(EntityDimensions.fixed(1.85f, 3.55f)).build());
+                    .dimensions(EntityDimensions.fixed(1.85f, 3.75f)).build());
 
 
 

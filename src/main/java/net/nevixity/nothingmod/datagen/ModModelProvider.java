@@ -21,6 +21,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ODIUM_BLOCK);
         blockStateModelGenerator.registerParentedItemModel(ModItems.CAPYBARA_SPAWN_EGG, new Identifier("item/template_spawn_egg"));
         blockStateModelGenerator.registerParentedItemModel(ModItems.REDPANDA_SPAWN_EGG, new Identifier("item/template_spawn_egg"));
+        blockStateModelGenerator.registerParentedItemModel(ModItems.BRUTE_BOSS_SPAWN_EGG, new Identifier("item/template_spawn_egg"));
     }
 
     @Override

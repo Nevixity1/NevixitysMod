@@ -30,6 +30,7 @@ public class ModItemGroups {
                         entries.add(ModItems.REDPANDA_SPAWN_EGG);
                         entries.add(ModItems.SMOKE_BOMB);
                         entries.add(ModItems.CAPYBARA_SPAWN_EGG);
+                        entries.add(ModItems.BRUTE_BOSS_SPAWN_EGG);
                     }).build());
 
     public static void registerItemGroups() {

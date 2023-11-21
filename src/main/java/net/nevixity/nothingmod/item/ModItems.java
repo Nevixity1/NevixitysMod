@@ -26,8 +26,13 @@ public class ModItems {
             new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item REDPANDA_SPAWN_EGG = registerItem("redpanda_spawn_egg", new SpawnEggItem(ModEntities.REDPANDA, 0xa53314, 0x3b260f,
             new FabricItemSettings()));
-    public static final Item CAPYBARA_SPAWN_EGG = registerItem("capybara_spawn_egg", new SpawnEggItem(ModEntities.CAPYBARA, 0xa555555, 0x3b260f,
+    public static final Item CAPYBARA_SPAWN_EGG = registerItem("capybara_spawn_egg", new SpawnEggItem(ModEntities.CAPYBARA, 0xa577755, 0x3b260f,
             new FabricItemSettings()));
+
+    public static final Item BRUTE_BOSS_SPAWN_EGG = registerItem("brute_boss_spawn_egg", new SpawnEggItem(ModEntities.BRUTE_BOSS, 0xa764785, 0x3b260f,
+            new FabricItemSettings()));
+
+
     public static final Item ODIUM_HAMMER = registerItem("odium_hammer", new OdiumHammerItem(new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
     public static final Item MUSIC_DISC_AUTUMN_FALLS = registerItem("music_disc_autumn_falls", new MusicDiscItem(9,
             ModSounds.AUTUMN_FALLS_DISC, new FabricItemSettings().rarity(Rarity.RARE).maxCount(1), 23));

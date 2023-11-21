@@ -21,6 +21,7 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.ODIUM_HAMMER, "Odium Hammer");
         translationBuilder.add(ModItems.REDPANDA_SPAWN_EGG, "Red Panda Spawn Egg");
         translationBuilder.add(ModItems.CAPYBARA_SPAWN_EGG, "Capybara Spawn Egg");
+        translationBuilder.add(ModItems.BRUTE_BOSS_SPAWN_EGG, "Brute Spawn Egg");
         translationBuilder.add(ModItems.SMOKE_BOMB, "Smoke Bomb");
         translationBuilder.add(ModItems.RAW_ODIUM, "Raw Odium");
         translationBuilder.add(ModItems.MUSIC_DISC_AUTUMN_FALLS, "Music Disc");
@@ -31,6 +32,7 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.ODIUM_BLOCK, "Block Of Odium");
         translationBuilder.add(ModBlocks.ODIUM_ORE, "Odium Ore");
 
+        translationBuilder.add(ModEntities.BRUTE_BOSS, "Piglin Brute Boss");
         translationBuilder.add(ModEntities.REDPANDA, "Red Panda");
         translationBuilder.add(ModEntities.CAPYBARA, "Capybara");
         translationBuilder.add(ModEntities.ODIUM_HAMMER, "Odium Hammer");
