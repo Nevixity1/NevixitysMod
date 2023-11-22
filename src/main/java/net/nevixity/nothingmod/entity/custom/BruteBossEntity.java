@@ -50,7 +50,7 @@ public class BruteBossEntity extends HostileEntity {
 
 
     public static DefaultAttributeContainer.Builder createBrutebossAttributes() {
-        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 200).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 10).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.4);
+        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 250).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 10).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3);
     }
 
     @Override
@@ -60,11 +60,11 @@ public class BruteBossEntity extends HostileEntity {
         this.goalSelector.add(0, new SwimGoal(this));
         ;
 
-        this.goalSelector.add(1, new BruteBossAttackGoal(this, 1.1D, true));
-        this.targetSelector.add(1, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
+        this.goalSelector.add(1, new BruteBossAttackGoal(this, 1.2D, true));
+        this.targetSelector.add(0, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
         this.goalSelector.add(6, new WanderAroundFarGoal(this, 1.0D));
         this.goalSelector.add(8, new LookAroundGoal(this));
-        this.goalSelector.add(9, new LookAtEntityGoal(this, PlayerEntity.class, 15.0f, 1.0f));
+        this.goalSelector.add(9, new LookAtEntityGoal(this, PlayerEntity.class, 20.0f, 1.0f));
         this.goalSelector.add(1, new RevengeGoal(this));
     }
 
