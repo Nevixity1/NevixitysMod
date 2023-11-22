@@ -6,6 +6,7 @@ import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.boss.BossBar;
+import net.minecraft.entity.boss.ServerBossBar;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
@@ -22,12 +23,14 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.EntityView;
 import net.minecraft.world.World;
 import net.nevixity.nothingmod.entity.ModEntities;
@@ -44,13 +47,17 @@ public class BruteBossEntity extends HostileEntity {
     public int attackAnimationTimeout = 0;
     private int idleAnimationTimeout = 0;
 
+    private final ServerBossBar bossBar = new ServerBossBar(Text.literal("The Brute"),
+                    BossBar.Color.RED, BossBar.Style.NOTCHED_6);
+
+
     public BruteBossEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
     }
 
 
     public static DefaultAttributeContainer.Builder createBrutebossAttributes() {
-        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 250).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 10).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3);
+        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 250).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 10).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 40.0).add(EntityAttributes.GENERIC_ARMOR, 4.0);
     }
 
     @Override
@@ -112,6 +119,16 @@ public class BruteBossEntity extends HostileEntity {
         if (this.getWorld().isClient()) {
             this.setupAnimationStates();
         }
+    }
+
+
+    @Override
+    public void checkDespawn() {
+        if (this.getWorld().getDifficulty() == Difficulty.PEACEFUL && this.isDisallowedInPeaceful()) {
+            this.discard();
+            return;
+        }
+        this.despawnCounter = 0;
     }
 
 
