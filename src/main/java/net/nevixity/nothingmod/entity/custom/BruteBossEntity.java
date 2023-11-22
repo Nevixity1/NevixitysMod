@@ -20,6 +20,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -137,6 +138,26 @@ public class BruteBossEntity extends HostileEntity {
         super.initDataTracker();
         this.dataTracker.startTracking(STANDING, false);
 
+    }
+
+/* BOSS BAR */
+
+    @Override
+    public void onStartedTrackingBy(ServerPlayerEntity player) {
+        super.onStartedTrackingBy(player);
+       this.bossBar.addPlayer(player);
+    }
+
+    @Override
+    public void onStoppedTrackingBy(ServerPlayerEntity player) {
+        super.onStoppedTrackingBy(player);
+         this.bossBar.removePlayer(player);
+    }
+
+    @Override
+    protected void mobTick() {
+        super.mobTick();
+      this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
     }
 }
 
