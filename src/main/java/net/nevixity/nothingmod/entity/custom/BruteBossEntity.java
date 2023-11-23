@@ -97,6 +97,26 @@ public class BruteBossEntity extends HostileEntity {
 
     }
 
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.ENTITY_PIGLIN_BRUTE_AMBIENT;
+    }
+
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundEvents.ENTITY_PIGLIN_BRUTE_HURT;
+    }
+
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.ENTITY_PIGLIN_BRUTE_DEATH;
+    }
+
+
     @Override
     public boolean shouldRenderName() {
         return false;
