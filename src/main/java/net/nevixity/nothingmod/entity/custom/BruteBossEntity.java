@@ -120,6 +120,12 @@ public class BruteBossEntity extends HostileEntity {
         if (this.getWorld().isClient()) {
             this.setupAnimationStates();
         }
+        if(this.isDead()) {
+            deathAnimationState.start(5);
+        updatePostDeath();
+        updateDespawnCounter(); {
+            }
+        }
     }
 
 
