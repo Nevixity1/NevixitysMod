@@ -45,7 +45,7 @@
       "bounding_box": "piece",
       "spawns": [
         {
-          "type": "minecraft:parrot",
+          "type": "minecraft:piglin_brute",
           "weight": 1,
           "minCount": 1,
           "maxCount": 4
