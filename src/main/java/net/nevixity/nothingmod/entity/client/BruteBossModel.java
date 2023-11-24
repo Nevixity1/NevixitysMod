@@ -118,8 +118,8 @@ public class BruteBossModel<T extends BruteBossEntity> extends SinglePartEntityM
     }
 
     public void setHeadAngles(BruteBossEntity entity, float headYaw, float headPitch, float animationProgress) {
-        headYaw = MathHelper.clamp(headYaw, -20, 20);
-        headPitch = MathHelper.clamp(headPitch, -20, 20);
+        headYaw = MathHelper.clamp(headYaw, -30, 30);
+        headPitch = MathHelper.clamp(headPitch, -30, 30);
 
         this.head.yaw = headYaw * 0.017453292F;
         this.head.pitch = headPitch * 0.017453292F;
