@@ -2,10 +2,11 @@
   "type": "minecraft:jigsaw",
   "biomes": "#nevixitysmod:has_structure/the_brutes_colosseums",
   "max_distance_from_center": 80,
+  "fallback": "minecraft:empty",
   "size": 6,
   "spawn_overrides": {},
   "start_height": {
-    "absolute": 36
+    "absolute": 0
   },
   "start_pool": "nevixitysmod:the_brutes_colosseums/start_pool",
   "step": "surface_structures",
