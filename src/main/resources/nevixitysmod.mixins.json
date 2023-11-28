@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.nevixity.nothingmod.mixin",
+  "package": "net.nevixity.nevixitysmod.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],

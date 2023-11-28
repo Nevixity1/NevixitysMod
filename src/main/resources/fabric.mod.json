@@ -14,15 +14,15 @@
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
-      "net.nevixity.nothingmod.NothingModDataGenerator"
+      "net.nevixity.nevixitysmod.NevixitysModDataGenerator"
 
     ],
     "client": [
-      "net.nevixity.nothingmod.NothingModClient"
+      "net.nevixity.nevixitysmod.NevixitysModClient"
 
     ],
     "main": [
-      "net.nevixity.nothingmod.NothingMod"
+      "net.nevixity.nevixitysmod.NevixitysMod"
     ]
   },
   "mixins": [
