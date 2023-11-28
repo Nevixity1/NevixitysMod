@@ -27,5 +27,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL);
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL);
         getOrCreateTagBuilder(TagKey.of(Registries.BLOCK.getKey(), new Identifier("fabric", "needs_tool_level_4")));
+        getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS)
+                .add(ModBlocks.ODIUM_BLOCK);
+
     }
 }
