@@ -76,5 +76,9 @@ public class RedpandaModel<T extends RedpandaEntity> extends SinglePartEntityMod
     public ModelPart getPart() {
         return redpanda;
     }
+
+    public void poseOnShoulder(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int defaultUv, float limbAngle, float limbDistance, float headYaw, float headPitch, int age) {
+
+    }
 }
 

@@ -13,6 +13,7 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
+import net.minecraft.entity.passive.TameableShoulderEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -29,7 +30,7 @@ import net.nevixity.nevixitysmod.entity.ModEntities;
 import net.nevixity.nevixitysmod.entity.ai.RedpandaAttackGoal;
 import org.jetbrains.annotations.Nullable;
 
-public class RedpandaEntity extends TameableEntity {
+public class RedpandaEntity extends TameableShoulderEntity {
     private static final TrackedData<Boolean> STANDING = DataTracker.registerData(RedpandaEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
     public final AnimationState idleAnimationState = new AnimationState();
@@ -39,7 +40,7 @@ public class RedpandaEntity extends TameableEntity {
     private int idleAnimationTimeout = 0;
 
 
-    public RedpandaEntity(EntityType<? extends TameableEntity> entityType, World world) {
+    public RedpandaEntity(EntityType<? extends TameableShoulderEntity> entityType, World world) {
         super(entityType, world);
     }
 
@@ -62,7 +63,7 @@ public class RedpandaEntity extends TameableEntity {
 
         this.goalSelector.add(2, new AnimalMateGoal(this, 1.15D));
         this.goalSelector.add(3, new TemptGoal(this, 1.1D, Ingredient.ofItems(Items.BAMBOO), false));
-
+        this.goalSelector.add(3, new SitOnOwnerShoulderGoal(this));
         this.goalSelector.add(6, new WanderAroundFarGoal(this, 1.0D));
         this.goalSelector.add(7, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
         this.goalSelector.add(8, new LookAroundGoal(this));
@@ -177,7 +178,7 @@ public class RedpandaEntity extends TameableEntity {
 
         Item itemForTaming = Items.BAMBOO;
 
-        if (stack.isOf(itemForTaming) && !isTamed()) {
+       if (stack.isOf(itemForTaming) && !isTamed()) {
             if (this.getWorld().isClient()) {
                 return ActionResult.CONSUME;
             }
@@ -202,6 +203,7 @@ public class RedpandaEntity extends TameableEntity {
             return ActionResult.SUCCESS;
         }
         return super.interactMob(player, hand);
+
     }
 
     @Override
