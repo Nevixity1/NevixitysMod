@@ -31,6 +31,6 @@ public class NevixitysModClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.CAPYBARA, CapybaraModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.ODIUM_HAMMER, OdiumHammerEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.BRUTE_BOSS, BruteBossModel::getTexturedModelData);
-
+        ShoulderRedpandaFeatureRenderer.register();
     }
 }

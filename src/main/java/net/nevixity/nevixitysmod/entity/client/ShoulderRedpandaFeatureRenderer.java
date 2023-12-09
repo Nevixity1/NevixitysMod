@@ -2,11 +2,16 @@ package net.nevixity.nevixitysmod.entity.client;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.rendering.v1.LivingEntityFeatureRendererRegistrationCallback;
+import net.fabricmc.fabric.api.event.Event;
+import net.fabricmc.fabric.api.event.EventFactory;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.entity.PlayerEntityRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.EntityModelLoader;
 import net.minecraft.client.render.entity.model.PlayerEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
@@ -25,6 +30,7 @@ public class ShoulderRedpandaFeatureRenderer<T extends PlayerEntity> extends Fea
         super(context);
         this.model = new RedpandaModel(loader.getModelPart(ModModelLayers.REDPANDA));
     }
+    
 
 
     public void render(MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, T playerEntity, float f, float g, float h, float j, float k, float l) {
@@ -46,4 +52,14 @@ public class ShoulderRedpandaFeatureRenderer<T extends PlayerEntity> extends Fea
             matrices.pop();
         });
     }
+
+    public static void register() {
+        LivingEntityFeatureRendererRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper, context) -> {
+            if (entityRenderer instanceof PlayerEntityRenderer) {
+                registrationHelper.register(new ShoulderRedpandaFeatureRenderer(entityRenderer, context.getModelLoader()));
+            }
+        });
+    }
 }
+
+
