@@ -1,8 +1,8 @@
-// 1.20.1	2023-11-28T19:47:39.0274964	Nevixity's Mod/Model Definitions
+// 1.20.1	2023-12-10T07:49:51.5140541	Nevixity's Mod/Model Definitions
 933f22dda7e4face328a0ab9653833032530f6cd assets\nevixitysmod\models\item\smoke_bomb.json
 50a5428e44ba0fa62f19b6b46e11bf77f9fc2de8 assets\nevixitysmod\models\item\odium_ore.json
-65ba54acfc475476b7544c50b2ef6ce37b38070c assets\nevixitysmod\models\item\odium_scrap.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\nevixitysmod\models\item\brute_boss_spawn_egg.json
+65ba54acfc475476b7544c50b2ef6ce37b38070c assets\nevixitysmod\models\item\odium_scrap.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\nevixitysmod\models\item\capybara_spawn_egg.json
 49cc4f1ddfc61f92eced1257951ed999a5c270c8 assets\nevixitysmod\models\item\odium_apple.json
 710a7fe22d3f0649e0361491e57745a2249c570c assets\nevixitysmod\models\block\odium_block.json
@@ -11,7 +11,7 @@ beaad177b5b718a990e7eab3d9c02eada8bb96a1 assets\nevixitysmod\blockstates\odium_b
 7a11f47f16c0fb51582e21b69c932fb4460da397 assets\nevixitysmod\models\item\odium_block.json
 acb5c9ec0b78408a1b0ee62611bc214087316750 assets\nevixitysmod\models\item\raw_odium.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\nevixitysmod\models\item\redpanda_spawn_egg.json
-b150eeb1898b7e79d5dc3920a42a0f1df33c23ca assets\nevixitysmod\models\item\odium_ingot.json
 3325ce50335c8f1a57445a899e9d705df7eb70f7 assets\nevixitysmod\blockstates\odium_ore.json
+b150eeb1898b7e79d5dc3920a42a0f1df33c23ca assets\nevixitysmod\models\item\odium_ingot.json
 8dd5d7841d7078256314c80dfdc2575e01789370 assets\nevixitysmod\models\item\odium_pickaxe.json
 cd7838654d7bf22690da6a691f8faf7bfca1266a assets\nevixitysmod\models\item\music_disc_autumn_falls.json

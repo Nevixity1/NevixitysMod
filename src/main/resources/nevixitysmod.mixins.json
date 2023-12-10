@@ -6,8 +6,7 @@
   "mixins": [
   ],
   "client": [
-    "BeaconScreenMixin",
-    "PlayerEntityRendererMixin"
+    "BeaconScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
