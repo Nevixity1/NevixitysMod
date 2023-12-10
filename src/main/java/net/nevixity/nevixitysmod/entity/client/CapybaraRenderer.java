@@ -10,7 +10,6 @@ import net.nevixity.nevixitysmod.entity.custom.CapybaraEntity;
 import net.nevixity.nevixitysmod.entity.layer.ModModelLayers;
 
 public class CapybaraRenderer extends MobEntityRenderer<CapybaraEntity, CapybaraModel<CapybaraEntity>> {
-
     private static final Identifier TEXTURE = new Identifier(NevixitysMod.MOD_ID, "textures/entity/capybara.png");
 
     public CapybaraRenderer(EntityRendererFactory.Context ctx) {
@@ -21,7 +20,6 @@ public class CapybaraRenderer extends MobEntityRenderer<CapybaraEntity, Capybara
     public Identifier getTexture(CapybaraEntity entity) {
         return TEXTURE;
     }
-
 
     @Override
     public void render(CapybaraEntity livingEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {

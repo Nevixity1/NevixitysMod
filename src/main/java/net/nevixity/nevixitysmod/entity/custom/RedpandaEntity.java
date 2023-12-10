@@ -12,7 +12,6 @@ import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.PassiveEntity;
-import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.passive.TameableShoulderEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -26,7 +25,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.EntityView;
 import net.minecraft.world.World;
-import net.nevixity.nevixitysmod.entity.ModEntities;
+import net.nevixity.nevixitysmod.entity.ModEntityTypes;
 import net.nevixity.nevixitysmod.entity.ai.RedpandaAttackGoal;
 import org.jetbrains.annotations.Nullable;
 
@@ -40,12 +39,15 @@ public class RedpandaEntity extends TameableShoulderEntity {
     private int idleAnimationTimeout = 0;
 
 
-    public RedpandaEntity(EntityType<? extends TameableShoulderEntity> entityType, World world) {
+    public RedpandaEntity(EntityType<? extends RedpandaEntity> entityType, World world) {
         super(entityType, world);
     }
 
     public static DefaultAttributeContainer.Builder createRedpandaAttributes() {
-        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 10).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.5).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3);
+        return MobEntity.createMobAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 10)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.5)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3);
     }
 
     @Override
@@ -124,7 +126,7 @@ public class RedpandaEntity extends TameableShoulderEntity {
     @Nullable
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return ModEntities.REDPANDA.create(world);
+        return ModEntityTypes.REDPANDA.create(world);
     }
 
     @Override

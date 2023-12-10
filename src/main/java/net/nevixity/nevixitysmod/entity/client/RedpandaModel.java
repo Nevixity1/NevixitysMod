@@ -8,13 +8,13 @@ import net.minecraft.util.math.MathHelper;
 import net.nevixity.nevixitysmod.entity.animations.RedPandaModAnimations;
 import net.nevixity.nevixitysmod.entity.custom.RedpandaEntity;
 
-public class RedpandaModel<T extends RedpandaEntity> extends SinglePartEntityModel<T> {
-    private final ModelPart redpanda;
-    private final ModelPart head;
+public class RedpandaModel extends SinglePartEntityModel<RedpandaEntity> {
+    private final ModelPart redpandaModelPart;
+    private final ModelPart headModelPart;
 
     public RedpandaModel(ModelPart root) {
-        this.redpanda = root.getChild("body");
-        this.head = redpanda.getChild("head");
+        this.redpandaModelPart = root.getChild("body");
+        this.headModelPart = redpandaModelPart.getChild("head");
     }
 
     public static TexturedModelData getTexturedModelData() {
@@ -47,38 +47,35 @@ public class RedpandaModel<T extends RedpandaEntity> extends SinglePartEntityMod
     }
 
     @Override
-    public void setAngles(RedpandaEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setAngles(RedpandaEntity redpandaEntity, float limbSwing, float limbSwingAmount, float ageInTicks, float headYaw, float headPitch) {
         this.getPart().traverse().forEach(ModelPart::resetTransform);
-        this.setHeadAngles(entity, netHeadYaw, headPitch, ageInTicks);
-
-
-        this.animateMovement(RedPandaModAnimations.WALKING, limbSwing, limbSwingAmount, 2f, 2.5f);
-        this.updateAnimation(entity.idleAnimationState, RedPandaModAnimations.IDLE, ageInTicks, 1f);
-        this.updateAnimation(entity.attackAnimationState, RedPandaModAnimations.STANDING, ageInTicks, 1f);
-        this.updateAnimation(entity.sitAnimationState, RedPandaModAnimations.SIT, ageInTicks, 1f);
-    }
-
-    public void setHeadAngles(RedpandaEntity entity, float headYaw, float headPitch, float animationProgress) {
         headYaw = MathHelper.clamp(headYaw, -40, 40);
         headPitch = MathHelper.clamp(headPitch, -25, 45);
 
-        this.head.yaw = headYaw * 0.017453292F;
-        this.head.pitch = headPitch * 0.017453292F;
+        this.headModelPart.yaw = headYaw * 0.017453292F;
+        this.headModelPart.pitch = headPitch * 0.017453292F;
+
+        this.animateMovement(RedPandaModAnimations.WALKING, limbSwing, limbSwingAmount, 2f, 2.5f);
+        this.updateAnimation(redpandaEntity.idleAnimationState, RedPandaModAnimations.IDLE, ageInTicks, 1f);
+        this.updateAnimation(redpandaEntity.attackAnimationState, RedPandaModAnimations.STANDING, ageInTicks, 1f);
+        this.updateAnimation(redpandaEntity.sitAnimationState, RedPandaModAnimations.SIT, ageInTicks, 1f);
     }
 
 
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-        redpanda.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
+        redpandaModelPart.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
     }
 
     @Override
     public ModelPart getPart() {
-        return redpanda;
+        return redpandaModelPart;
     }
 
-    public void poseOnShoulder(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int defaultUv, float limbAngle, float limbDistance, float headYaw, float headPitch, int age) {
-
+    public void poseOnShoulder(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float limbAngle, float limbDistance, float headYaw, float headPitch, int danceAngle) {
+//        this.animateModel(Pose.ON_SHOULDER);
+//        this.setAngles(Pose.ON_SHOULDER, danceAngle, limbAngle, limbDistance, 0.0f, headYaw, headPitch);
+        this.redpandaModelPart.render(matrices, vertexConsumer, light, overlay);
     }
 }
 

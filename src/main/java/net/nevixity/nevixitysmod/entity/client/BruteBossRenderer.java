@@ -9,8 +9,7 @@ import net.nevixity.nevixitysmod.NevixitysMod;
 import net.nevixity.nevixitysmod.entity.custom.BruteBossEntity;
 import net.nevixity.nevixitysmod.entity.layer.ModModelLayers;
 
-    public class BruteBossRenderer extends MobEntityRenderer<BruteBossEntity, BruteBossModel<BruteBossEntity>> {
-
+public class BruteBossRenderer extends MobEntityRenderer<BruteBossEntity, BruteBossModel<BruteBossEntity>> {
     private static final Identifier TEXTURE = new Identifier(NevixitysMod.MOD_ID, "textures/entity/brute_boss.png");
 
     public BruteBossRenderer(EntityRendererFactory.Context ctx) {

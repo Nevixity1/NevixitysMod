@@ -23,23 +23,23 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.nevixity.nevixitysmod.entity.ModEntities;
+import net.nevixity.nevixitysmod.entity.ModEntityTypes;
 import net.nevixity.nevixitysmod.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
 public class OdiumHammerEntity extends PersistentProjectileEntity {
     private static final TrackedData<Boolean> ENCHANTED = DataTracker.registerData(OdiumHammerEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+    private final int explosionPower = 2;
     public int returnTimer;
     private ItemStack hammerStack = new ItemStack(ModItems.ODIUM_HAMMER);
-    private boolean dealtDamage;
-    private int explosionPower = 2;
+    private boolean hasDealtDamage;
 
     public OdiumHammerEntity(EntityType<? extends OdiumHammerEntity> entityType, World world) {
         super(entityType, world);
     }
 
     public OdiumHammerEntity(World world, LivingEntity owner, ItemStack stack) {
-        super(ModEntities.ODIUM_HAMMER, owner, world);
+        super(ModEntityTypes.ODIUM_HAMMER, owner, world);
         this.hammerStack = stack.copy();
         this.dataTracker.set(ENCHANTED, stack.hasGlint());
     }
@@ -53,13 +53,11 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
     @Override
     public void tick() {
         if (this.inGroundTime > 4) {
-            this.dealtDamage = true;
-
-
+            this.hasDealtDamage = true;
         }
         Entity entity = this.getOwner();
         double loyaltyLevel = 3;
-        if ((this.dealtDamage || this.isNoClip()) && entity != null) {
+        if ((this.hasDealtDamage || this.isNoClip()) && entity != null) {
             if (!this.isOwnerAlive()) {
                 if (!this.getWorld().isClient && this.pickupType == PersistentProjectileEntity.PickupPermission.ALLOWED) {
                     this.dropStack(this.asItemStack(), 0.1f);
@@ -81,9 +79,7 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
             }
         }
         super.tick();
-
-        }
-
+    }
 
 
     private boolean isOwnerAlive() {
@@ -107,10 +103,8 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
     @Override
     @Nullable
     protected EntityHitResult getEntityCollision(Vec3d currentPosition, Vec3d nextPosition) {
-        if (this.dealtDamage) {
+        if (this.hasDealtDamage) {
             return null;
-
-
         }
         return super.getEntityCollision(currentPosition, nextPosition);
     }
@@ -125,7 +119,7 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
         }
         Entity owner = this.getOwner();
         DamageSource damageSource = this.getDamageSources().trident(this, owner == null ? this : owner);
-        this.dealtDamage = true;
+        this.hasDealtDamage = true;
         SoundEvent soundEvent = SoundEvents.ITEM_TRIDENT_HIT;
         if (target.damage(damageSource, f)) {
             if (target.getType() == EntityType.ENDERMAN) {
@@ -153,7 +147,7 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
             }
         }
         this.playSound(soundEvent, soundVolume, 1.0f);
-        this.getWorld().createExplosion((Entity) this, this.getX(), this.getY(), this.getZ(), (float)this.explosionPower, World.ExplosionSourceType.NONE);
+        this.getWorld().createExplosion(this, this.getX(), this.getY(), this.getZ(), (float) this.explosionPower, World.ExplosionSourceType.NONE);
     }
 
 
@@ -184,14 +178,14 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
         if (nbt.contains("Hammer", NbtElement.COMPOUND_TYPE)) {
             this.hammerStack = ItemStack.fromNbt(nbt.getCompound("Hammer"));
         }
-        this.dealtDamage = nbt.getBoolean("DealtDamage");
+        this.hasDealtDamage = nbt.getBoolean("DealtDamage");
     }
 
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
-        nbt.put("Hammer", this.hammerStack.writeNbt(new NbtCompound()));
-        nbt.putBoolean("DealtDamage", this.dealtDamage);
+        nbt.put("Hammer", this.hammerStack.getNbt());
+        nbt.putBoolean("DealtDamage", this.hasDealtDamage);
     }
 
     @Override
@@ -210,15 +204,16 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
     public boolean shouldRender(double cameraX, double cameraY, double cameraZ) {
         return true;
     }
+
     @Override
     protected void onHit(LivingEntity target) {
         super.onHit(target);
-        this.getWorld().createExplosion((Entity) this, this.getX(), this.getY(), this.getZ(), (float) this.explosionPower, World.ExplosionSourceType.NONE);
+        this.getWorld().createExplosion(this, this.getX(), this.getY(), this.getZ(), (float) this.explosionPower, World.ExplosionSourceType.NONE);
     }
 
     @Override
     protected void onBlockHit(BlockHitResult blockHitResult) {
         super.onBlockHit(blockHitResult);
-        this.getWorld().createExplosion((Entity) this, this.getX(), this.getY(), this.getZ(), (float) this.explosionPower, World.ExplosionSourceType.NONE);
+        this.getWorld().createExplosion(this, this.getX(), this.getY(), this.getZ(), (float) this.explosionPower, World.ExplosionSourceType.NONE);
     }
 }

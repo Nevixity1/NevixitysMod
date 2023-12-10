@@ -21,7 +21,6 @@ public class OdiumScytheItem extends SwordItem {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }
 
-
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);

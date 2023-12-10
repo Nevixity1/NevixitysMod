@@ -28,7 +28,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.EntityView;
 import net.minecraft.world.World;
-import net.nevixity.nevixitysmod.entity.ModEntities;
+import net.nevixity.nevixitysmod.entity.ModEntityTypes;
 import net.nevixity.nevixitysmod.entity.ai.CapybaraAttackGoal;
 import org.jetbrains.annotations.Nullable;
 
@@ -42,12 +42,15 @@ public class CapybaraEntity extends TameableEntity implements Mount {
     private int idleAnimationTimeout = 0;
 
 
-    public CapybaraEntity(EntityType<? extends TameableEntity> entityType, World world) {
+    public CapybaraEntity(EntityType<? extends CapybaraEntity> entityType, World world) {
         super(entityType, world);
     }
 
     public static DefaultAttributeContainer.Builder createCapybaraAttributes() {
-        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 12).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.5).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2);
+        return MobEntity.createMobAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 12)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.5)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.2);
     }
 
     @Override
@@ -127,7 +130,7 @@ public class CapybaraEntity extends TameableEntity implements Mount {
     @Nullable
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return ModEntities.CAPYBARA.create(world);
+        return ModEntityTypes.CAPYBARA.create(world);
     }
 
     @Override

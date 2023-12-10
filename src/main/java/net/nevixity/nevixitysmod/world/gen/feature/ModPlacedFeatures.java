@@ -1,4 +1,4 @@
-package net.nevixity.nevixitysmod.world;
+package net.nevixity.nevixitysmod.world.gen.feature;
 
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryEntryLookup;
@@ -11,6 +11,8 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 import net.nevixity.nevixitysmod.NevixitysMod;
+import net.nevixity.nevixitysmod.world.ModConfiguredFeatures;
+import net.nevixity.nevixitysmod.world.ModOrePlacement;
 
 import java.util.List;
 

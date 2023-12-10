@@ -6,7 +6,7 @@ import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 import net.nevixity.nevixitysmod.datagen.*;
 import net.nevixity.nevixitysmod.world.ModConfiguredFeatures;
-import net.nevixity.nevixitysmod.world.ModPlacedFeatures;
+import net.nevixity.nevixitysmod.world.gen.feature.ModPlacedFeatures;
 
 public class NevixitysModDataGenerator implements DataGeneratorEntrypoint {
     @Override
@@ -19,6 +19,7 @@ public class NevixitysModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModBlockTagProvider::new);
 		pack.addProvider(ModLanguageProvider::new);
+		pack.addProvider(ModBlockLootTableProvider::new);
     }
 
     @Override
