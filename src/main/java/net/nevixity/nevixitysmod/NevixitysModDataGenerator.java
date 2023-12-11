@@ -16,10 +16,10 @@ public class NevixitysModDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModWorldGenerator::new);
         pack.addProvider(ModItemTagProvider::new);
         pack.addProvider(ModAdvancementProvider::new);
-		pack.addProvider(ModModelProvider::new);
-		pack.addProvider(ModBlockTagProvider::new);
-		pack.addProvider(ModLanguageProvider::new);
-		pack.addProvider(ModBlockLootTableProvider::new);
+        pack.addProvider(ModModelProvider::new);
+        pack.addProvider(ModBlockTagProvider::new);
+        pack.addProvider(ModLanguageProvider::new);
+        pack.addProvider(ModBlockLootTableProvider::new);
     }
 
     @Override

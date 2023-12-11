@@ -52,5 +52,3 @@ public class ShoulderRedpandaFeatureRenderer<T extends PlayerEntity> extends Fea
         });
     }
 }
-
-

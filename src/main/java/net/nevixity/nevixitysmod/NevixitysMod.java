@@ -1,9 +1,8 @@
 package net.nevixity.nevixitysmod;
 
 import net.fabricmc.api.ModInitializer;
-
-import net.nevixity.nevixitysmod.entity.ModEntityTypes;
 import net.nevixity.nevixitysmod.block.ModBlocks;
+import net.nevixity.nevixitysmod.entity.ModEntityTypes;
 import net.nevixity.nevixitysmod.item.ModItemGroups;
 import net.nevixity.nevixitysmod.item.ModItems;
 import net.nevixity.nevixitysmod.particles.ModParticles;

@@ -40,7 +40,6 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModEntityTypes.ODIUM_HAMMER, "Odium Hammer");
         translationBuilder.add(ModEntityTypes.SCYTHE_CHARGE_PROJECTILE, "Thrown Scythe Charge");
         translationBuilder.add(ModEntityTypes.SMOKE_BOMB_PROJECTILE, "Thrown Smoke Bomb");
-
         translationBuilder.add(Registries.ITEM_GROUP.getKey(ModItemGroups.NEVIXITYS_MOD).get(), "Nevixity's Mod");
     }
 }

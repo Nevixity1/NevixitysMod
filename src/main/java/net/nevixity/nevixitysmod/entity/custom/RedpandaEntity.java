@@ -224,5 +224,7 @@ public class RedpandaEntity extends TameableShoulderEntity {
     public boolean handleFallDamage(float fallDistance, float damageMultiplier, DamageSource damageSource) {
         return false;
     }
+
+
 }
 

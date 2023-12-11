@@ -78,4 +78,3 @@ public class RedpandaModel extends SinglePartEntityModel<RedpandaEntity> {
         this.redpandaModelPart.render(matrices, vertexConsumer, light, overlay);
     }
 }
-
