@@ -25,7 +25,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.EntityView;
 import net.minecraft.world.World;
-import net.nevixity.nevixitysmod.entity.ModEntities;
+import net.nevixity.nevixitysmod.entity.ModEntityTypes;
 import net.nevixity.nevixitysmod.entity.ai.RedpandaAttackGoal;
 import org.jetbrains.annotations.Nullable;
 
@@ -123,7 +123,7 @@ public class RedpandaEntity extends TameableShoulderEntity {
     @Nullable
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return ModEntities.REDPANDA.create(world);
+        return ModEntityTypes.REDPANDA.create(world);
     }
 
     @Override

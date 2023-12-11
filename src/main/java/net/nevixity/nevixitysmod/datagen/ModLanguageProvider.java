@@ -3,7 +3,7 @@ package net.nevixity.nevixitysmod.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.nevixity.nevixitysmod.block.ModBlocks;
-import net.nevixity.nevixitysmod.entity.ModEntities;
+import net.nevixity.nevixitysmod.entity.ModEntityTypes;
 import net.nevixity.nevixitysmod.item.ModItems;
 
 public class ModLanguageProvider extends FabricLanguageProvider {
@@ -32,11 +32,11 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.ODIUM_BLOCK, "Block Of Odium");
         translationBuilder.add(ModBlocks.ODIUM_ORE, "Odium Ore");
 
-        translationBuilder.add(ModEntities.BRUTE_BOSS, "Piglin Brute Boss");
-        translationBuilder.add(ModEntities.REDPANDA, "Red Panda");
-        translationBuilder.add(ModEntities.CAPYBARA, "Capybara");
-        translationBuilder.add(ModEntities.ODIUM_HAMMER, "Odium Hammer");
-        translationBuilder.add(ModEntities.SCYTHE_CHARGE_PROJECTILE, "Thrown Scythe Charge");
-        translationBuilder.add(ModEntities.SMOKE_BOMB_PROJECTILE, "Thrown Smoke Bomb");
+        translationBuilder.add(ModEntityTypes.BRUTE_BOSS, "Piglin Brute Boss");
+        translationBuilder.add(ModEntityTypes.REDPANDA, "Red Panda");
+        translationBuilder.add(ModEntityTypes.CAPYBARA, "Capybara");
+        translationBuilder.add(ModEntityTypes.ODIUM_HAMMER, "Odium Hammer");
+        translationBuilder.add(ModEntityTypes.SCYTHE_CHARGE_PROJECTILE, "Thrown Scythe Charge");
+        translationBuilder.add(ModEntityTypes.SMOKE_BOMB_PROJECTILE, "Thrown Smoke Bomb");
     }
 }

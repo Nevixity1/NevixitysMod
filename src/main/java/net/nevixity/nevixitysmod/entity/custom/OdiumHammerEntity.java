@@ -23,7 +23,7 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.nevixity.nevixitysmod.entity.ModEntities;
+import net.nevixity.nevixitysmod.entity.ModEntityTypes;
 import net.nevixity.nevixitysmod.item.ModItems;
 import org.jetbrains.annotations.Nullable;
 
@@ -39,7 +39,7 @@ public class OdiumHammerEntity extends PersistentProjectileEntity {
     }
 
     public OdiumHammerEntity(World world, LivingEntity owner, ItemStack stack) {
-        super(ModEntities.ODIUM_HAMMER, owner, world);
+        super(ModEntityTypes.ODIUM_HAMMER, owner, world);
         this.hammerStack = stack.copy();
         this.dataTracker.set(ENCHANTED, stack.hasGlint());
     }

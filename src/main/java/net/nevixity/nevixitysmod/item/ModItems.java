@@ -9,7 +9,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.nevixity.nevixitysmod.NevixitysMod;
-import net.nevixity.nevixitysmod.entity.ModEntities;
+import net.nevixity.nevixitysmod.entity.ModEntityTypes;
 import net.nevixity.nevixitysmod.item.custom.OdiumHammerItem;
 import net.nevixity.nevixitysmod.item.custom.OdiumScytheItem;
 import net.nevixity.nevixitysmod.item.custom.SmokeBombItem;
@@ -24,12 +24,12 @@ public class ModItems {
             new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
     public static final Item ODIUM_SCYTHE = registerItem("odium_scythe", new OdiumScytheItem(ModToolMaterials.ODIUM, 4, -2.5f,
             new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
-    public static final Item REDPANDA_SPAWN_EGG = registerItem("redpanda_spawn_egg", new SpawnEggItem(ModEntities.REDPANDA, 0xa53314, 0x3b260f,
+    public static final Item REDPANDA_SPAWN_EGG = registerItem("redpanda_spawn_egg", new SpawnEggItem(ModEntityTypes.REDPANDA, 0xa53314, 0x3b260f,
             new FabricItemSettings()));
-    public static final Item CAPYBARA_SPAWN_EGG = registerItem("capybara_spawn_egg", new SpawnEggItem(ModEntities.CAPYBARA, 0xa577755, 0x3b260f,
+    public static final Item CAPYBARA_SPAWN_EGG = registerItem("capybara_spawn_egg", new SpawnEggItem(ModEntityTypes.CAPYBARA, 0xa577755, 0x3b260f,
             new FabricItemSettings()));
 
-    public static final Item BRUTE_BOSS_SPAWN_EGG = registerItem("brute_boss_spawn_egg", new SpawnEggItem(ModEntities.BRUTE_BOSS, 0xa764785, 0x3b260f,
+    public static final Item BRUTE_BOSS_SPAWN_EGG = registerItem("brute_boss_spawn_egg", new SpawnEggItem(ModEntityTypes.BRUTE_BOSS, 0xa764785, 0x3b260f,
             new FabricItemSettings()));
 
 

@@ -28,7 +28,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.EntityView;
 import net.minecraft.world.World;
-import net.nevixity.nevixitysmod.entity.ModEntities;
+import net.nevixity.nevixitysmod.entity.ModEntityTypes;
 import net.nevixity.nevixitysmod.entity.ai.CapybaraAttackGoal;
 import org.jetbrains.annotations.Nullable;
 
@@ -127,7 +127,7 @@ public class CapybaraEntity extends TameableEntity implements Mount {
     @Nullable
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return ModEntities.CAPYBARA.create(world);
+        return ModEntityTypes.CAPYBARA.create(world);
     }
 
     @Override

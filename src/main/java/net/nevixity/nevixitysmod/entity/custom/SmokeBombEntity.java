@@ -10,7 +10,7 @@ import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.world.World;
-import net.nevixity.nevixitysmod.entity.ModEntities;
+import net.nevixity.nevixitysmod.entity.ModEntityTypes;
 import net.nevixity.nevixitysmod.particles.ModParticles;
 
 
@@ -20,7 +20,7 @@ public class SmokeBombEntity extends ThrownItemEntity {
     }
 
     public SmokeBombEntity(LivingEntity owner, World world) {
-        super(ModEntities.SMOKE_BOMB_PROJECTILE, owner, world);
+        super(ModEntityTypes.SMOKE_BOMB_PROJECTILE, owner, world);
     }
 
     @Override

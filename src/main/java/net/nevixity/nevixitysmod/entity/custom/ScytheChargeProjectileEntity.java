@@ -21,7 +21,7 @@ import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.nevixity.nevixitysmod.entity.ModEntities;
+import net.nevixity.nevixitysmod.entity.ModEntityTypes;
 import net.nevixity.nevixitysmod.particles.ModParticles;
 
 public class ScytheChargeProjectileEntity extends PersistentProjectileEntity {
@@ -33,7 +33,7 @@ public class ScytheChargeProjectileEntity extends PersistentProjectileEntity {
     }
 
     public ScytheChargeProjectileEntity(World world, PlayerEntity player) {
-        super(ModEntities.SCYTHE_CHARGE_PROJECTILE, world);
+        super(ModEntityTypes.SCYTHE_CHARGE_PROJECTILE, world);
         setOwner(player);
         BlockPos blockpos = player.getBlockPos();
         double d0 = (double) blockpos.getX() + 0.5d;

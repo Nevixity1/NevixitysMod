@@ -11,7 +11,6 @@ import net.nevixity.nevixitysmod.entity.custom.BruteBossEntity;
 
 
 public class BruteBossModel<T extends BruteBossEntity> extends SinglePartEntityModel<T> {
-
     private final ModelPart bone;
     private final ModelPart head;
 

@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier;
 import net.nevixity.nevixitysmod.NevixitysMod;
 import net.nevixity.nevixitysmod.entity.custom.*;
 
-public class ModEntities {
+public class ModEntityTypes {
     public static final EntityType<ScytheChargeProjectileEntity> SCYTHE_CHARGE_PROJECTILE = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(NevixitysMod.MOD_ID, "scythe_charge_projectile"),
             FabricEntityTypeBuilder.<ScytheChargeProjectileEntity>create(SpawnGroup.MISC, ScytheChargeProjectileEntity::new)
@@ -40,7 +40,7 @@ public class ModEntities {
 
 
 
-    public static void registerModEntites() {
-        NevixitysMod.LOGGER.info("Registering ModEntities for " + NevixitysMod.MOD_ID);
+    public static void registerModEntityTypes() {
+        NevixitysMod.LOGGER.info("Registering ModEntityTypes for " + NevixitysMod.MOD_ID);
     }
 }
