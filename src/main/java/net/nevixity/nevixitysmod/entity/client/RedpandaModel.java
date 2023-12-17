@@ -2,8 +2,11 @@ package net.nevixity.nevixitysmod.entity.client;
 
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.entity.animation.Animation;
+import net.minecraft.client.render.entity.model.ParrotEntityModel;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.AnimationState;
 import net.minecraft.util.math.MathHelper;
 import net.nevixity.nevixitysmod.entity.animations.RedPandaModAnimations;
 import net.nevixity.nevixitysmod.entity.custom.RedpandaEntity;
@@ -62,6 +65,7 @@ public class RedpandaModel extends SinglePartEntityModel<RedpandaEntity> {
     }
 
 
+
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
         redpandaModelPart.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
@@ -74,7 +78,15 @@ public class RedpandaModel extends SinglePartEntityModel<RedpandaEntity> {
 
     public void poseOnShoulder(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float limbAngle, float limbDistance, float headYaw, float headPitch, int danceAngle) {
 //        this.animateModel(Pose.ON_SHOULDER);
+this.animateModel(RedPandaModAnimations.RIDING_PLAYER);
 //        this.setAngles(Pose.ON_SHOULDER, danceAngle, limbAngle, limbDistance, 0.0f, headYaw, headPitch);
         this.redpandaModelPart.render(matrices, vertexConsumer, light, overlay);
     }
+
+
+    private void animateModel(Animation ridingPlayer) {
+    }
+
+
+
 }
