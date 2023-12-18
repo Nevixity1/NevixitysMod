@@ -10,7 +10,6 @@ import net.nevixity.nevixitysmod.entity.custom.RedpandaEntity;
 import net.nevixity.nevixitysmod.entity.layer.ModModelLayers;
 
 public class RedpandaRenderer extends MobEntityRenderer<RedpandaEntity, RedpandaModel> {
-
     public static final Identifier TEXTURE = new Identifier(NevixitysMod.MOD_ID, "textures/entity/redpanda.png");
 
     public RedpandaRenderer(EntityRendererFactory.Context ctx) {
@@ -25,8 +24,6 @@ public class RedpandaRenderer extends MobEntityRenderer<RedpandaEntity, Redpanda
 
     @Override
     public void render(RedpandaEntity livingEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
-
-
         if (livingEntity.isBaby()) {
             matrixStack.scale(0.5f, 0.5f, 0.5f);
         } else {

@@ -39,6 +39,7 @@ public class ShoulderRedpandaFeatureRenderer<T extends PlayerEntity> extends Fea
             matrices.push();
             matrices.translate(leftShoulder ? 0.4f : -0.4f, player.isInSneakingPose() ? -1.3f : -1.5f, 0.0f);
             VertexConsumer vertexConsumer = vertexConsumers.getBuffer(this.model.getLayer(RedpandaRenderer.TEXTURE));
+            
             this.model.poseOnShoulder(matrices, vertexConsumer, light, OverlayTexture.DEFAULT_UV, limbAngle, limbDistance, headYaw, headPitch, player.age);
             matrices.pop();
         }
