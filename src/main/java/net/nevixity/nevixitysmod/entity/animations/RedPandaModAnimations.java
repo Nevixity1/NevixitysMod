@@ -342,6 +342,61 @@ public class RedPandaModAnimations {
                             new Keyframe(0.5834334f, AnimationHelper.createRotationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR))).build();
 
-
-
+    public static final Animation RIDING_PLAYER = Animation.Builder.create(0f)
+            .addBoneAnimation("body",
+                    new Transformation(Transformation.Targets.TRANSLATE,
+                            new Keyframe(0f, AnimationHelper.createTranslationalVector(-2.25f, 19.5f, 7.75f),
+                                    Transformation.Interpolations.LINEAR)))
+            .addBoneAnimation("body",
+                    new Transformation(Transformation.Targets.ROTATE,
+                            new Keyframe(0f, AnimationHelper.createRotationalVector(0f, 0f, -12.5f),
+                                    Transformation.Interpolations.LINEAR)))
+            .addBoneAnimation("torso",
+                    new Transformation(Transformation.Targets.ROTATE,
+                            new Keyframe(0f, AnimationHelper.createRotationalVector(-47.5f, 0f, 0f),
+                                    Transformation.Interpolations.LINEAR)))
+            .addBoneAnimation("tail",
+                    new Transformation(Transformation.Targets.TRANSLATE,
+                            new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, -2.5f, -1.25f),
+                                    Transformation.Interpolations.LINEAR)))
+            .addBoneAnimation("tail",
+                    new Transformation(Transformation.Targets.ROTATE,
+                            new Keyframe(0f, AnimationHelper.createRotationalVector(-57.5f, 0f, 0f),
+                                    Transformation.Interpolations.LINEAR)))
+            .addBoneAnimation("leg1",
+                    new Transformation(Transformation.Targets.TRANSLATE,
+                            new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, 2f, 0.5f),
+                                    Transformation.Interpolations.LINEAR)))
+            .addBoneAnimation("leg1",
+                    new Transformation(Transformation.Targets.ROTATE,
+                            new Keyframe(0f, AnimationHelper.createRotationalVector(-35.33f, 13.47f, 18.19f),
+                                    Transformation.Interpolations.LINEAR)))
+            .addBoneAnimation("leg2",
+                    new Transformation(Transformation.Targets.TRANSLATE,
+                            new Keyframe(0f, AnimationHelper.createTranslationalVector(-0.25f, 2f, 0.25f),
+                                    Transformation.Interpolations.LINEAR)))
+            .addBoneAnimation("leg2",
+                    new Transformation(Transformation.Targets.ROTATE,
+                            new Keyframe(0f, AnimationHelper.createRotationalVector(-36.66f, -17.27f, -21.74f),
+                                    Transformation.Interpolations.LINEAR)))
+            .addBoneAnimation("head",
+                    new Transformation(Transformation.Targets.TRANSLATE,
+                            new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, 3f, 3f),
+                                    Transformation.Interpolations.LINEAR)))
+            .addBoneAnimation("leg4",
+                    new Transformation(Transformation.Targets.TRANSLATE,
+                            new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, -1.5f, -1.75f),
+                                    Transformation.Interpolations.LINEAR)))
+            .addBoneAnimation("leg4",
+                    new Transformation(Transformation.Targets.ROTATE,
+                            new Keyframe(0f, AnimationHelper.createRotationalVector(-29.41f, 6.21f, 10.87f),
+                                    Transformation.Interpolations.LINEAR)))
+            .addBoneAnimation("leg3",
+                    new Transformation(Transformation.Targets.TRANSLATE,
+                            new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, -1f, -1.75f),
+                                    Transformation.Interpolations.LINEAR)))
+            .addBoneAnimation("leg3",
+                    new Transformation(Transformation.Targets.ROTATE,
+                            new Keyframe(0f, AnimationHelper.createRotationalVector(-26.69f, -6.86f, -13.37f),
+                                    Transformation.Interpolations.LINEAR))).build();
 }
