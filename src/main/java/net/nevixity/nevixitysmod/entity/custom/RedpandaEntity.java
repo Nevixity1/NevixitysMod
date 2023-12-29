@@ -36,7 +36,6 @@ public class RedpandaEntity extends TameableShoulderEntity {
     public final AnimationState attackAnimationState = new AnimationState();
     public final AnimationState sitAnimationState = new AnimationState();
 
-    public final AnimationState sitttingAnimationState = new AnimationState();
     public int attackAnimationTimeout = 0;
     private int idleAnimationTimeout = 0;
 
@@ -226,7 +225,5 @@ public class RedpandaEntity extends TameableShoulderEntity {
     public boolean handleFallDamage(float fallDistance, float damageMultiplier, DamageSource damageSource) {
         return false;
     }
-
-
 }
 
