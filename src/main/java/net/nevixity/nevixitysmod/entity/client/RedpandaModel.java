@@ -79,7 +79,7 @@ public class RedpandaModel extends SinglePartEntityModel<RedpandaEntity> {
     public void poseOnShoulder(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float limbAngle, float limbDistance, float headYaw, float headPitch, int danceAngle) {
 //        this.animateModel(Pose.ON_SHOULDER);
 this.animateModel(RedPandaModAnimations.RIDING_PLAYER);
-//        this.setAngles(Pose.ON_SHOULDER, danceAngle, limbAngle, limbDistance, 0.0f, headYaw, headPitch);
+//        this.setAngles(Pose.ON_SHOULDER, danceAngle, limbAngle, limbDistance, 0.0f, headYaw, headPitch); uuuuuuhh
         this.redpandaModelPart.render(matrices, vertexConsumer, light, overlay);
     }
 
