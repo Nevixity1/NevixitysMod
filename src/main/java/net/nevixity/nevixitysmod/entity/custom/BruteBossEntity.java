@@ -1,6 +1,8 @@
 package net.nevixity.nevixitysmod.entity.custom;
 
-import net.minecraft.entity.*;
+import net.minecraft.entity.AnimationState;
+import net.minecraft.entity.EntityPose;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -28,14 +30,12 @@ public class BruteBossEntity extends HostileEntity {
     public final AnimationState idleAnimationState = new AnimationState();
     public final AnimationState attackAnimationState = new AnimationState();
     public final AnimationState deathAnimationState = new AnimationState();
+    private final ServerBossBar bossBar = new ServerBossBar(Text.literal("The Brute"), BossBar.Color.RED, BossBar.Style.NOTCHED_6);
     public int attackAnimationTimeout = 0;
     private int idleAnimationTimeout = 0;
 
-    private final ServerBossBar bossBar = new ServerBossBar(Text.literal("The Brute"),
-                    BossBar.Color.RED, BossBar.Style.NOTCHED_6);
 
-
-    public BruteBossEntity(EntityType<? extends HostileEntity> entityType, World world) {
+    public BruteBossEntity(EntityType<? extends BruteBossEntity> entityType, World world) {
         super(entityType, world);
     }
 
@@ -49,10 +49,9 @@ public class BruteBossEntity extends HostileEntity {
         super.initGoals();
 
         this.goalSelector.add(0, new SwimGoal(this));
-        ;
 
         this.goalSelector.add(1, new BruteBossAttackGoal(this, 1.2D, true));
-        this.targetSelector.add(0, new ActiveTargetGoal<PlayerEntity>((MobEntity)this, PlayerEntity.class, true));
+        this.targetSelector.add(0, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
         this.goalSelector.add(6, new WanderAroundFarGoal(this, 1.0D));
         this.goalSelector.add(8, new LookAroundGoal(this));
         this.goalSelector.add(9, new LookAtEntityGoal(this, PlayerEntity.class, 20.0f, 1.0f));
@@ -123,10 +122,11 @@ public class BruteBossEntity extends HostileEntity {
         if (this.getWorld().isClient()) {
             this.setupAnimationStates();
         }
-        if(this.isDead()) {
+        if (this.isDead()) {
             deathAnimationState.start(5);
-        updatePostDeath();
-        updateDespawnCounter(); {
+            updatePostDeath();
+            updateDespawnCounter();
+            {
             }
         }
     }
@@ -149,24 +149,24 @@ public class BruteBossEntity extends HostileEntity {
 
     }
 
-/* BOSS BAR */
+    /* BOSS BAR */
 
     @Override
     public void onStartedTrackingBy(ServerPlayerEntity player) {
         super.onStartedTrackingBy(player);
-       this.bossBar.addPlayer(player);
+        this.bossBar.addPlayer(player);
     }
 
     @Override
     public void onStoppedTrackingBy(ServerPlayerEntity player) {
         super.onStoppedTrackingBy(player);
-         this.bossBar.removePlayer(player);
+        this.bossBar.removePlayer(player);
     }
 
     @Override
     protected void mobTick() {
         super.mobTick();
-      this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
+        this.bossBar.setPercent(this.getHealth() / this.getMaxHealth());
     }
 }
 

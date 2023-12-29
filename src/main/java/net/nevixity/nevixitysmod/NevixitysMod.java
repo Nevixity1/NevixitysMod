@@ -1,13 +1,12 @@
 package net.nevixity.nevixitysmod;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.nevixity.nevixitysmod.block.ModBlocks;
 import net.nevixity.nevixitysmod.entity.ModEntityTypes;
 import net.nevixity.nevixitysmod.item.ModItemGroups;
 import net.nevixity.nevixitysmod.item.ModItems;
 import net.nevixity.nevixitysmod.particles.ModParticles;
-import net.nevixity.nevixitysmod.sound.ModSounds;
+import net.nevixity.nevixitysmod.sound.ModSoundEvents;
 import net.nevixity.nevixitysmod.util.ModRegistries;
 import net.nevixity.nevixitysmod.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
@@ -26,6 +25,6 @@ public class NevixitysMod implements ModInitializer {
 		ModEntityTypes.registerModEntityTypes();
 		ModRegistries.registerModStuffs();
 		ModWorldGeneration.generateModWorldGeneration();
-		ModSounds.registerModSounds();
+		ModSoundEvents.registerModSounds();
 	}
 }

@@ -36,17 +36,19 @@ public class RedpandaEntity extends TameableShoulderEntity {
     public final AnimationState attackAnimationState = new AnimationState();
     public final AnimationState sitAnimationState = new AnimationState();
 
-    public final AnimationState sitttingAnimationState = new AnimationState();
     public int attackAnimationTimeout = 0;
     private int idleAnimationTimeout = 0;
 
 
-    public RedpandaEntity(EntityType<? extends TameableShoulderEntity> entityType, World world) {
+    public RedpandaEntity(EntityType<? extends RedpandaEntity> entityType, World world) {
         super(entityType, world);
     }
 
     public static DefaultAttributeContainer.Builder createRedpandaAttributes() {
-        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 10).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.5).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3);
+        return MobEntity.createMobAttributes()
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 10)
+                .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2.5)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3);
     }
 
     @Override
@@ -223,7 +225,5 @@ public class RedpandaEntity extends TameableShoulderEntity {
     public boolean handleFallDamage(float fallDistance, float damageMultiplier, DamageSource damageSource) {
         return false;
     }
-
-
 }
 

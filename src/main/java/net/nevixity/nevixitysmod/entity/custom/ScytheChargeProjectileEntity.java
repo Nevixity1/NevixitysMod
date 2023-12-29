@@ -26,9 +26,9 @@ import net.nevixity.nevixitysmod.particles.ModParticles;
 
 public class ScytheChargeProjectileEntity extends PersistentProjectileEntity {
     private static final TrackedData<Boolean> HIT = DataTracker.registerData(ScytheChargeProjectileEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
-    private int counter = 0;
+    private int totalTicksToLive = 0;
 
-    public ScytheChargeProjectileEntity(EntityType<? extends PersistentProjectileEntity> entityType, World world) {
+    public ScytheChargeProjectileEntity(EntityType<? extends ScytheChargeProjectileEntity> entityType, World world) {
         super(entityType, world);
     }
 
@@ -50,13 +50,13 @@ public class ScytheChargeProjectileEntity extends PersistentProjectileEntity {
         }
 
         if (this.dataTracker.get(HIT)) {
-            if (this.age >= counter) {
+            if (this.age >= totalTicksToLive) {
                 this.discard();
             }
         }
 
         if (this.age >= 15) {
-            this.remove(RemovalReason.DISCARDED);
+            this.discard();
         }
 
         Vec3d vec3 = this.getVelocity();
@@ -98,7 +98,6 @@ public class ScytheChargeProjectileEntity extends PersistentProjectileEntity {
         if (target.damage(this.getDamageSources().mobProjectile(this, livingOwner), damage) && target instanceof LivingEntity livingTarget) {
             livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 150, 0), owner);
             livingTarget.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 150, 0), owner);
-
         }
 
         for (int x = 0; x < 18; ++x) {
@@ -139,11 +138,11 @@ public class ScytheChargeProjectileEntity extends PersistentProjectileEntity {
 
             if (owner != target) {
                 this.dataTracker.set(HIT, true);
-                counter = this.age + 5;
+                totalTicksToLive = this.age + 5;
             }
         } else if (hitResult.getType() == HitResult.Type.BLOCK) {
             this.dataTracker.set(HIT, true);
-            counter = this.age + 5;
+            totalTicksToLive = this.age + 5;
         }
     }
 

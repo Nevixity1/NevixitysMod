@@ -2,8 +2,10 @@ package net.nevixity.nevixitysmod.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.registry.Registries;
 import net.nevixity.nevixitysmod.block.ModBlocks;
 import net.nevixity.nevixitysmod.entity.ModEntityTypes;
+import net.nevixity.nevixitysmod.item.ModItemGroups;
 import net.nevixity.nevixitysmod.item.ModItems;
 
 public class ModLanguageProvider extends FabricLanguageProvider {
@@ -38,5 +40,6 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ModEntityTypes.ODIUM_HAMMER, "Odium Hammer");
         translationBuilder.add(ModEntityTypes.SCYTHE_CHARGE_PROJECTILE, "Thrown Scythe Charge");
         translationBuilder.add(ModEntityTypes.SMOKE_BOMB_PROJECTILE, "Thrown Smoke Bomb");
+        translationBuilder.add(Registries.ITEM_GROUP.getKey(ModItemGroups.NEVIXITYS_MOD).get(), "Nevixity's Mod");
     }
 }

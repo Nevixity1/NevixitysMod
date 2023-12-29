@@ -1,6 +1,5 @@
 package net.nevixity.nevixitysmod.datagen;
 
-
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.nevixity.nevixitysmod.block.ModBlocks;

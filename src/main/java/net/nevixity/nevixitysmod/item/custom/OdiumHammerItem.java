@@ -64,8 +64,8 @@ public class OdiumHammerItem extends ToolItem implements Vanishable {
         if (!(user instanceof PlayerEntity playerEntity)) {
             return;
         }
-        int i = this.getMaxUseTime(stack) - remainingUseTicks;
-        if (i < 10) {
+        int useTicks = this.getMaxUseTime(stack) - remainingUseTicks;
+        if (useTicks < 10) {
             return;
         }
         if (!world.isClient) {
@@ -102,7 +102,7 @@ public class OdiumHammerItem extends ToolItem implements Vanishable {
 
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
-        if ((double)state.getHardness(world, pos) != 0.0) {
+        if (state.getHardness(world, pos) != 0.0) {
             stack.damage(2, miner, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
         }
         return true;

@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.client.rendering.v1.LivingEntityFeatureRendererRe
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
-import net.minecraft.client.render.entity.LivingEntityRenderer;
 import net.minecraft.client.render.entity.PlayerEntityRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
@@ -28,8 +27,6 @@ public class ShoulderRedpandaFeatureRenderer<T extends PlayerEntity> extends Fea
         this.model = new RedpandaModel(loader.getModelPart(ModModelLayers.REDPANDA));
     }
 
-
-
     @Override
     public void render(MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, T playerEntity, float f, float g, float h, float j, float k, float l) {
         this.renderShoulderRedPanda(matrixStack, vertexConsumerProvider, i, playerEntity, f, g, k, l, true);
@@ -42,6 +39,7 @@ public class ShoulderRedpandaFeatureRenderer<T extends PlayerEntity> extends Fea
             matrices.push();
             matrices.translate(leftShoulder ? 0.4f : -0.4f, player.isInSneakingPose() ? -1.3f : -1.5f, 0.0f);
             VertexConsumer vertexConsumer = vertexConsumers.getBuffer(this.model.getLayer(RedpandaRenderer.TEXTURE));
+            
             this.model.poseOnShoulder(matrices, vertexConsumer, light, OverlayTexture.DEFAULT_UV, limbAngle, limbDistance, headYaw, headPitch, player.age);
             matrices.pop();
         }

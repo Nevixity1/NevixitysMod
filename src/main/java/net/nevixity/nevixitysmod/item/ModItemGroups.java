@@ -11,10 +11,10 @@ import net.nevixity.nevixitysmod.NevixitysMod;
 import net.nevixity.nevixitysmod.block.ModBlocks;
 
 public class ModItemGroups {
-    public static final ItemGroup ODIUM = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(NevixitysMod.MOD_ID, "odium"),
+    public static final ItemGroup NEVIXITYS_MOD = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(NevixitysMod.MOD_ID, "nevixitys_mod"),
             FabricItemGroup.builder()
-                    .displayName(Text.translatable("Nevixity's Mod"))
+                    .displayName(Text.translatable("itemGroup.nevixitys_mod"))
                     .icon(() -> new ItemStack(ModItems.ODIUM_APPLE))
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.ODIUM_INGOT);

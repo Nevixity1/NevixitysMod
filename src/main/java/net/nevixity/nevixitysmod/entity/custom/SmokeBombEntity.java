@@ -15,7 +15,7 @@ import net.nevixity.nevixitysmod.particles.ModParticles;
 
 
 public class SmokeBombEntity extends ThrownItemEntity {
-    public SmokeBombEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
+    public SmokeBombEntity(EntityType<? extends SmokeBombEntity> entityType, World world) {
         super(entityType, world);
     }
 

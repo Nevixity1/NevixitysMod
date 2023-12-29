@@ -1,13 +1,13 @@
 {
   "block.nevixitysmod.odium_block": "Block Of Odium",
   "block.nevixitysmod.odium_ore": "Odium Ore",
-  "entity.nevixitysmod.brute_boss": "The Brute",
+  "entity.nevixitysmod.brute_boss": "Piglin Brute Boss",
   "entity.nevixitysmod.capybara": "Capybara",
   "entity.nevixitysmod.odium_hammer": "Odium Hammer",
   "entity.nevixitysmod.redpanda": "Red Panda",
   "entity.nevixitysmod.scythe_charge_projectile": "Thrown Scythe Charge",
   "entity.nevixitysmod.smoke_bomb_projectile": "Thrown Smoke Bomb",
-  "item.nevixitysmod.brute_boss_spawn_egg": "The Brute Spawn Egg",
+  "item.nevixitysmod.brute_boss_spawn_egg": "Brute Spawn Egg",
   "item.nevixitysmod.capybara_spawn_egg": "Capybara Spawn Egg",
   "item.nevixitysmod.music_disc_autumn_falls": "Music Disc",
   "item.nevixitysmod.music_disc_autumn_falls.desc": "Nevixity - Autumn Falls",
@@ -20,5 +20,6 @@
   "item.nevixitysmod.odium_scythe.tooltip": "Shoots Toxic Odium Flame Upon Right Click",
   "item.nevixitysmod.raw_odium": "Raw Odium",
   "item.nevixitysmod.redpanda_spawn_egg": "Red Panda Spawn Egg",
-  "item.nevixitysmod.smoke_bomb": "Smoke Bomb"
+  "item.nevixitysmod.smoke_bomb": "Smoke Bomb",
+  "itemGroup.nevixitys_mod": "Nevixity's Mod"
 }
