@@ -5,12 +5,11 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
+import net.nevixity.nevixitysmod.NevixitysMod;
 import net.nevixity.nevixitysmod.entity.custom.RedpandaEntity;
 import net.nevixity.nevixitysmod.entity.layer.ModModelLayers;
-import net.nevixity.nevixitysmod.NevixitysMod;
 
 public class RedpandaRenderer extends MobEntityRenderer<RedpandaEntity, RedpandaModel> {
-
     public static final Identifier TEXTURE = new Identifier(NevixitysMod.MOD_ID, "textures/entity/redpanda.png");
 
     public RedpandaRenderer(EntityRendererFactory.Context ctx) {
@@ -25,8 +24,6 @@ public class RedpandaRenderer extends MobEntityRenderer<RedpandaEntity, Redpanda
 
     @Override
     public void render(RedpandaEntity livingEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
-
-
         if (livingEntity.isBaby()) {
             matrixStack.scale(0.5f, 0.5f, 0.5f);
         } else {

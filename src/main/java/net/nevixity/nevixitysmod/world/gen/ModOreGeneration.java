@@ -3,7 +3,7 @@ package net.nevixity.nevixitysmod.world.gen;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.world.gen.GenerationStep;
-import net.nevixity.nevixitysmod.world.ModPlacedFeatures;
+import net.nevixity.nevixitysmod.world.gen.feature.ModPlacedFeatures;
 
 public class ModOreGeneration {
     public static void generateOres() {

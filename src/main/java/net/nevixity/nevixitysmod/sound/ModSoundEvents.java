@@ -6,7 +6,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.nevixity.nevixitysmod.NevixitysMod;
 
-public class ModSounds {
+public class ModSoundEvents {
 
     public static final SoundEvent AUTUMN_FALLS_DISC = registerSoundEvent("autumn_falls_disc");
 
@@ -16,6 +16,6 @@ public class ModSounds {
     }
 
     public static void registerModSounds() {
-        NevixitysMod.LOGGER.info("Registering Mod Sounds" + NevixitysMod.MOD_ID);
+        NevixitysMod.LOGGER.info("Registering ModSoundEvents for " + NevixitysMod.MOD_ID);
     }
 }
