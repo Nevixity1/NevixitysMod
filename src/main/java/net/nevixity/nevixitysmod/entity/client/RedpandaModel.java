@@ -134,25 +134,25 @@ public class RedpandaModel extends SinglePartEntityModel<RedpandaEntity> {
 //        redpandaModelPart.getChild("leg3").translate(new Vector3f(0f, -1f, -1.75f));
 //        redpandaModelPart.getChild("leg3").setAngles((float) Math.toRadians(-26.69f), (float) Math.toRadians(6.86f), (float) Math.toRadians(-13.37f));
 
-        redpandaModelPart.setPivot(-2.25f, 19.5f, -7.75f);
-        redpandaModelPart.setAngles((float) Math.toRadians(0f), (float) Math.toRadians(-0f), (float) Math.toRadians(-12.5f));
+        redpandaModelPart.setPivot(-0f, 23.5f, 1f);
+        redpandaModelPart.setAngles((float) Math.toRadians(0f), (float) Math.toRadians(-0f), (float) Math.toRadians(-0.5f));
 
-        redpandaModelPart.getChild("head").setPivot(0f, -3f, -3f);
+        redpandaModelPart.getChild("head").setPivot(0f, -3f, -2f);
         redpandaModelPart.getChild("torso").setAngles((float) Math.toRadians(-47.5f), (float) Math.toRadians(-0f), (float) Math.toRadians(0f));
 
-        redpandaModelPart.getChild("tail").setPivot(0f, 2.5f, 3.25f);
+        redpandaModelPart.getChild("tail").setPivot(0f, 2f, 2.75f);
         redpandaModelPart.getChild("tail").setAngles((float) Math.toRadians(-57.5f), (float) Math.toRadians(-0f), (float) Math.toRadians(0f));
 
-        redpandaModelPart.getChild("leg1").setPivot(0f, -2f, -0.5f);
-        redpandaModelPart.getChild("leg1").setAngles((float) Math.toRadians(-35.33f), (float) Math.toRadians(-13.47f), (float) Math.toRadians(18.19f));
+        redpandaModelPart.getChild("leg1").setPivot(-1.7f, 0f, -2.5f);
+        redpandaModelPart.getChild("leg1").setAngles((float) Math.toRadians(-35.33f), (float) Math.toRadians(-13.47f), (float) Math.toRadians(28.19f));
 
-        redpandaModelPart.getChild("leg2").setPivot(-0.25f, -2f, -0.25f);
-        redpandaModelPart.getChild("leg2").setAngles((float) Math.toRadians(-36.66f), (float) Math.toRadians(17.27f), (float) Math.toRadians(-21.74f));
+        redpandaModelPart.getChild("leg2").setPivot(1.7f, 0f, -2.5f);
+        redpandaModelPart.getChild("leg2").setAngles((float) Math.toRadians(-36.66f), (float) Math.toRadians(17.27f), (float) Math.toRadians(-28.74f));
 
-        redpandaModelPart.getChild("leg4").setPivot(0f, 1.5f, 1.75f);
-        redpandaModelPart.getChild("leg4").setAngles((float) Math.toRadians(-29.41f), (float) Math.toRadians(-6.21f), (float) Math.toRadians(10.87f));
+        redpandaModelPart.getChild("leg4").setPivot(-1.7f, 2.8f, 1f);
+        redpandaModelPart.getChild("leg4").setAngles((float) Math.toRadians(-29.41f), (float) Math.toRadians(-6.21f), (float) Math.toRadians(28.87f));
 
-        redpandaModelPart.getChild("leg3").setPivot(0f, 1f, 1.75f);
+        redpandaModelPart.getChild("leg3").setPivot(1.7f, 2.8f, 1f);
         redpandaModelPart.getChild("leg3").setAngles((float) Math.toRadians(-26.69f), (float) Math.toRadians(6.86f), (float) Math.toRadians(-13.37f));
 
 //        redpandaModelPart.getChild("leg1").setPivot(0f, -2f, -0.5f);
